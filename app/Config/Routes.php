@@ -12,9 +12,7 @@ $routes->get('/auth/logout', 'AuthController::logout');
 $routes->get('/dashboard', 'DashboardController::index');
 $routes->get('/settings', 'DashboardController::settings');
 $routes->get('/keluarga', 'DashboardController::keluarga');
+$routes->get('/form-individu', 'DashboardController::formIndividu');
 
 $routes->post('kuesioner/getData', 'KuesionerController::getData');
 $routes->get('kuesioner/create', 'KuesionerController::create');
-
-
-

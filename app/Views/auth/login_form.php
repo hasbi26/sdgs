@@ -1,203 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-      crossorigin="anonymous"
-    />
+    <?= $this->include('layouts/partials/head') ?>
+
     <style>
-        /* Importing fonts from Google */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+.svg-icon {
+  width: 350px !important;
+  height: auto !important; /* biar proporsi tetap */
+}
 
-        /* Resetting */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background: url('<?= base_url('img/default.jpg') ?>') no-repeat center center fixed;
-            background-size: cover;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .wrapper {
-            width: 90%;
-            max-width: 400px;
-            margin-right: 250px !important; 
-            min-height: 450px;
-            margin: 20px auto;
-            padding: 30px 20px;
-            background-color: #ecf0f3;
-            border-radius: 15px;
-            /* box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff; */
-        }
-
-        .logo {
-            width: 80px;
-            margin: auto;
-        }
-
-        .logo img {
-            width: 100%;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 50%;
-            box-shadow: 0px 0px 3px #5f5f5f,
-                0px 0px 0px 5px #027edb,
-                8px 8px 15px #a7aaa7,
-                -8px -8px 15px #fff;
-        }
-
-        .wrapper .name {
-            font-weight: 600;
-            font-size: clamp(1.2rem, 5vw, 1.4rem);
-            letter-spacing: 1.3px;
-            padding-left: 10px;
-            color: #555;
-            text-align: center;
-        }
-
-        .wrapper .form-field input {
-            width: 100%;
-            display: block;
-            border: none;
-            outline: none;
-            background: none;
-            font-size: clamp(0.9rem, 4vw, 1.1rem);
-            color: #666;
-            padding: 10px 15px 10px 10px;
-        }
-
-        .wrapper .form-field {
-            padding-left: 10px;
-            margin-bottom: 15px;
-            border-radius: 20px;
-            box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
-            display: flex;
-            align-items: center;
-        }
-
-        .wrapper .form-field .fas {
-            color: #555;
-            margin-right: 10px;
-        }
-
-        .wrapper .btn {
-            box-shadow: none;
-            width: 100%;
-            height: 40px;
-            background-color: #03A9F4;
-            color: #fff;
-            border-radius: 25px;
-            box-shadow: 3px 3px 3px #b1b1b1,
-                -3px -3px 3px #fff;
-            letter-spacing: 1.3px;
-            font-size: clamp(0.9rem, 4vw, 1rem);
-        }
-
-        .wrapper .btn:hover {
-            background-color: #039BE5;
-        }
-
-        .wrapper a {
-            text-decoration: none;
-            font-size: clamp(0.7rem, 3.5vw, 0.8rem);
-            color: #03A9F4;
-        }
-
-        .wrapper a:hover {
-            color: #039BE5;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 576px) {
-            .wrapper {
-                margin: 15px;
-                padding: 20px 15px;
-                min-height: 400px;
-                margin-right: 0px !important;
-            }
-
-            .logo {
-                width: 60px;
-            }
-
-            .logo img {
-                height: 60px;
-            }
-
-            .wrapper .form-field {
-                margin-bottom: 12px;
-            }
-
-            .wrapper .btn {
-                height: 36px;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .wrapper {
-                padding: 15px 10px;
-            }
-        }
     </style>
 </head>
-<body>
-    <div class="wrapper">
-        <?php if (session()->getFlashdata('success')): ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert" id="flashMessage">
-                <?= session()->getFlashdata('success') ?>
-            </div>
-        <?php elseif (session()->getFlashdata('error')): ?>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert" id="flashMessage">
-                <?= session()->getFlashdata('error') ?>
-            </div>
-        <?php endif; ?>
+     
+     <!-- ========== signin-section start ========== -->
+      <section class="signin-section">
+        <div class="container-fluid">
 
-        <div class="logo">
-            <img src="<?= base_url('img/logo-sdgs.png') ?>" alt="SDGS Desa Jatimulya Logo">
-        </div>
-        <div class="name mt-4">
-            SDGS Desa Jatimulya
-        </div>
-        <form class="p-3 mt-3" action="<?= base_url('/auth/login') ?>" method="POST">
-            <div class="form-field">
-                <span class="far fa-user"></span>
-                <input type="text" name="username" id="username" placeholder="Username">
+          <div class="row g-0 auth-row">
+            <div class="col-lg-6">
+              <div class="auth-cover-wrapper bg-primary-100">
+                <div class="auth-cover">
+                  <div class="title text-center">
+                    <h1 class="text-primary mb-10">Welcome</h1>
+                    <p class="text-medium">
+                     Sustainable Development Goals Desa Jatimulya
+                    </p>
+                  </div>
+                  <div class="cover-image">
+                    <img src="assets/images/auth/sdgs.svg" alt="" class="svg-icon" />
+                  </div>
+                  <!-- <div class="shape-image">
+                  </div> -->
+                </div>
+              </div>
             </div>
-            <div class="form-field">
-                <span class="fas fa-key"></span>
-                <input type="password" name="password" id="password" placeholder="Password">
-            </div>
-            <button class="btn mt-3" type="submit">Login</button>
-        </form>
-        <div class="text-center fs-6">
-            <!-- <a href="#">Forget password?</a> or <a href="#">Sign up</a> -->
-        </div>
-    </div>
+            <!-- end col -->
+            <div class="col-lg-6">
+              <div class="signin-wrapper">
+                <div class="form-wrapper">
+                  <h6 class="mb-15">Sign In Form</h6>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-      crossorigin="anonymous"
-    ></script>
+                  <?php if (session()->getFlashdata('success')): ?>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert" id="flashMessage">
+                        <?= session()->getFlashdata('success') ?>
+                    </div>
+                <?php elseif (session()->getFlashdata('error')): ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="flashMessage">
+                        <?= session()->getFlashdata('error') ?>
+                    </div>
+                <?php endif; ?>
+
+
+                  <p class="text-sm mb-25">
+                  </p>
+                  <form class="p-3 mt-3" action="<?= base_url('/auth/login') ?>" method="POST">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="input-style-1">
+                          <label>User Name</label>
+                          <input type="text" placeholder="User Name" name="username" id="username" />
+                        </div>
+                      </div>
+                      <!-- end col -->
+                      <div class="col-12">
+                        <div class="input-style-1">
+                          <label>Password</label>
+                          <input type="password" name="password" id="password" placeholder="Password" />
+                        </div>
+                      </div>
+                      <!-- end col -->
+                      <div class="col-xxl-6 col-lg-12 col-md-6">
+                        <div class="form-check checkbox-style mb-30">
+                          <input class="form-check-input" type="checkbox" value="" id="checkbox-remember" />
+                          <label class="form-check-label" for="checkbox-remember">
+                            Remember me next time</label>
+                        </div>
+                      </div>
+                      <!-- end col -->
+                      <div class="col-xxl-6 col-lg-12 col-md-6">
+                        <div class="text-start text-md-end text-lg-start text-xxl-end mb-30">
+                          <a href="reset-password.html" class="hover-underline">
+                            Forgot Password?
+                          </a>
+                        </div>
+                      </div>
+                      <!-- end col -->
+                      <div class="col-12">
+                        <div class="button-group d-flex justify-content-center flex-wrap">
+                          <button class="main-btn primary-btn btn-hover w-100 text-center">
+                            Sign In
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end row -->
+                  </form>
+                  <!-- <div class="singin-option pt-40">
+                    <p class="text-sm text-medium text-center text-gray">
+                      Easy Sign In With
+                    </p>
+                    <div class="button-group pt-40 pb-40 d-flex justify-content-center flex-wrap">
+                      <button class="main-btn primary-btn-outline m-2">
+                        <i class="lni lni-facebook-fill mr-10"></i>
+                        Facebook
+                      </button>
+                      <button class="main-btn danger-btn-outline m-2">
+                        <i class="lni lni-google mr-10"></i>
+                        Google
+                      </button>
+                    </div>
+                    <p class="text-sm text-medium text-dark text-center">
+                      Don’t have any account yet?
+                      <a href="signup.html">Create an account</a>
+                    </p>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+        </div>
+      </section>
+      <!-- ========== signin-section end ========== -->
+
+
+      
+
     <script>
         setTimeout(function() {
             let flash = document.getElementById('flashMessage');

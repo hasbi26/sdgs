@@ -1,15 +1,15 @@
-<?= $this->extend('layouts/main') ?>
-
-<?= $this->section('content') ?>
-
-
 <style>
-
-
 input[type="text"].show-password {
   -webkit-text-security: none !important;
 }
 </style>
+
+<?= $this->extend('layouts/main') ?>
+<?= $this->section('content') ?>
+
+     <!-- ========== section start ========== -->
+<section class="section">
+        <div class="container-fluid">
 
 
 <?php if (session()->getFlashdata('success')): ?>
@@ -128,7 +128,10 @@ input[type="text"].show-password {
 
 
 
-
+        </div>
+        <!-- end container -->
+      </section>
+      <!-- ========== section end ========== -->
 
 <script>
 toggleChangePassword.addEventListener('click', function () {

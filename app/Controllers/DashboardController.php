@@ -70,4 +70,22 @@ class DashboardController extends BaseController
         ];
         return view('pages/keluarga', $data);
     }
+
+    public function formIndividu(){
+
+        if (!$this->session->get('logged_in')) {
+            return redirect()->to('/')
+                             ->with('error', 'Silakan login terlebih dahulu');
+        }
+
+
+        $data = [
+            'title' => 'KUESIONER Individu',
+            'username' => session()->get('username'),
+            'role' => session()->get('role'),
+            'wilayah_nama' => session()->get('wilayah_nama')
+        ];
+        return view('pages/form_individu', $data);
+        
+    }
 }

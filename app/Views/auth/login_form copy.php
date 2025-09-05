@@ -26,23 +26,24 @@
         }
 
         body {
-    background: <?= base_url('img/default.jpg') ?> no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-            }
+            background: url('<?= base_url('img/default.jpg') ?>') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         .wrapper {
             width: 90%;
             max-width: 400px;
+            margin-right: 250px !important; 
             min-height: 450px;
             margin: 20px auto;
             padding: 30px 20px;
             background-color: #ecf0f3;
             border-radius: 15px;
-            box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+            /* box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff; */
         }
 
         .logo {
@@ -128,6 +129,7 @@
                 margin: 15px;
                 padding: 20px 15px;
                 min-height: 400px;
+                margin-right: 0px !important;
             }
 
             .logo {
@@ -156,20 +158,18 @@
 </head>
 <body>
     <div class="wrapper">
-
-    <?php if (session()->getFlashdata('success')): ?>
-        <div class="alert alert-success alert-dismissible fade show" role="alert" id="flashMessage">
-            <?= session()->getFlashdata('success') ?>
-        </div>
-    <?php elseif (session()->getFlashdata('error')): ?>
-        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="flashMessage">
-            <?= session()->getFlashdata('error') ?>
-        </div>
-    <?php endif; ?>
-
+        <?php if (session()->getFlashdata('success')): ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert" id="flashMessage">
+                <?= session()->getFlashdata('success') ?>
+            </div>
+        <?php elseif (session()->getFlashdata('error')): ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" id="flashMessage">
+                <?= session()->getFlashdata('error') ?>
+            </div>
+        <?php endif; ?>
 
         <div class="logo">
-            <img src="<?= base_url('img/logo-sdgs.png')?>" alt="SDGS Desa Jatimulya Logo">
+            <img src="<?= base_url('img/logo-sdgs.png') ?>" alt="SDGS Desa Jatimulya Logo">
         </div>
         <div class="name mt-4">
             SDGS Desa Jatimulya

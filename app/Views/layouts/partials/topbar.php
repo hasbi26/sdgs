@@ -1,32 +1,63 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand ps-3" href="<?= base_url('dashboard') ?>"><?= esc(ucfirst($role));?> <?= $wilayah_nama ?></a>
-    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle">
-        <i class="fas fa-bars"></i>
-    </button>
+<main class="main-wrapper">
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-6">
+                    <div class="header-left d-flex align-items-center">
+                        <div class="menu-toggle-btn mr-15">
+                            <button id="menu-toggle" class="main-btn primary-btn btn-hover">
+                                <i class="lni lni-chevron-left me-2"></i> Menu
+                            </button>
+                        </div>
+                        <div class="header-search d-none d-md-flex">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-6">
+                    <div class="header-right">
 
-    <!-- Search -->
-    <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-        <div class="input-group">
-            <!-- <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." />
-            <button class="btn btn-primary" id="btnNavbarSearch" type="button">
-                <i class="fas fa-search"></i>
-            </button> -->
+                        <!-- profile start -->
+                        <div class="profile-box ml-15">
+                            <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="profile-info">
+                                    <div class="info">
+                                        <div class="image">
+                                            <img src="<?= base_url('/img/smd.png') ?>" alt="" />
+                                        </div>
+                                        <div>
+                                            <h6 class="fw-500"><?= esc(ucfirst($role));?> <?= $wilayah_nama ?></h6>
+                                            <p>Admin</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
+                                <li>
+                                    <div class="author-info flex items-center !p-1">
+                                        <div class="image">
+                                            <img src="<?= base_url('/img/smd.png') ?>" alt="image">
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="text-sm"><?= esc(ucfirst($role));?> <?= $wilayah_nama ?></h4>
+                                            <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
+                                                href="#">Email@gmail.com</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="<?= base_url('settings') ?>"> <i class="lni lni-cog"></i> Settings </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="/auth/logout"> <i class="lni lni-exit"></i> Sign Out </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- profile end -->
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
-
-    <!-- User Dropdown -->
-    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-               data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-user fa-fw"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="<?= base_url('settings') ?>">Settings</a></li>
-                <!-- <li><a class="dropdown-item" href="#">Activity Log</a></li> -->
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="/auth/logout">Logout</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
+    </header>

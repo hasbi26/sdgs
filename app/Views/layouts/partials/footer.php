@@ -1,12 +1,27 @@
-<footer class="py-4 bg-light mt-auto">
-    <div class="container-fluid px-4">
-        <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">&copy; Desa Jatimulya <?= date('Y') ?></div>
-            <!-- <div>
-                <a href="#">Privacy Policy</a>
-                &middot;
-                <a href="#">Terms & Conditions</a>
-            </div> -->
+<footer class="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 order-last order-md-first">
+              <div class="copyright text-center text-md-start">
+                <p class="text-sm">
+                  <!-- Designed and Developed by
+                  <a href="https://plainadmin.com" rel="nofollow" target="_blank">
+                    PlainAdmin -->
+                    Desa Jatimulya
+                  </a>
+                </p>
+              </div>
+            </div>
+            <!-- end col-->
+            <div class="col-md-6">
+              <div class="terms d-flex justify-content-center justify-content-md-end">
+                <!-- <a href="#0" class="text-sm">Term & Conditions</a>
+                <a href="#0" class="text-sm ml-15">Privacy & Policy</a> -->
+              </div>
+            </div>
+          </div>
+          <!-- end row -->
         </div>
-    </div>
-</footer>
+        <!-- end container -->
+      </footer>
+    </main>

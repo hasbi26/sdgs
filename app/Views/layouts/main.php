@@ -6,7 +6,7 @@
 <body class="sb-nav-fixed">
 
     <!-- Topbar -->
-    <?= $this->include('layouts/partials/topbar') ?>
+     <?= $this->include('layouts/partials/topbar') ?>
 
     <div id="layoutSidenav">
         <!-- Sidebar -->
@@ -14,11 +14,11 @@
 
         <!-- Content -->
         <div id="layoutSidenav_content">
-            <main class="container-fluid px-4">
+            <!-- <main class="container-fluid"> -->
                 <?= $this->renderSection('content') ?>
                 <?= $this->renderSection('scripts') ?>
 
-            </main>
+            <!-- </main> -->
 
             <!-- Footer -->
             <?= $this->include('layouts/partials/footer') ?>
