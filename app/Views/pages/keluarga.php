@@ -184,27 +184,13 @@ th h6 {
                     <div class="row mb-3">
                         <div class="col-md-3">
                             <!-- form create -->
-                            <form action="#" method="post">
-                                <!-- P1 DESKRIPSI ENUMERATOR -->
-                                <!-- <div class="card-style mb-10">
-                                    <h6 class="mb-25">P1. Deskripsi Enumerator</h6>
-
-                                    <label>Select Enumerator</label>
-                                    <div class="select-position">
-                                        <select id="enumeratorSelect" class="form-select">
-                                            <option value="">Select Enumerator</option>
-                                            <option value="">Sajali</option>
-                                            <option value="">Ahmad</option>
-                                            <option value="">Asep</option>
-                                        </select>
-                                    </div>
-                                </div> -->
+                            <form id="sdgsForm">
                                 <div class="card-style mb-10">
                                     <h6 class="mb-25">P1. Deskripsi Enumerator</h6>
 
                                     <label for="enumeratorSelect">Select Enumerator</label>
                                     <div class="select-position">
-                                        <select id="enumeratorSelect" style="width: 100%"></select>
+                                        <select name="enumerator_id" id="enumeratorSelect" style="width: 100%"></select>
                                     </div>
                                 </div>
                         </div>
@@ -217,31 +203,31 @@ th h6 {
                                     </div>
                                     <div class="col-md-4">
                                         <!-- <label for="p205" class="form-label">RT/RW</label> -->
-                                        <input type="text" class="form-control" id="p205" name="p205"
+                                        <input type="text" class="form-control" id="rt_rw" name="rt_rw"
                                             placeholder="RT/RW">
                                     </div>
                                     <div class="col-md-4">
                                         <!-- <label for="p206" class="form-label">Nama</label> -->
-                                        <input type="text" class="form-control" id="p206" name="p206"
-                                            placeholder="Nama">
+                                        <input type="text" class="form-control" id="nama_responden"
+                                            name="nama_responden" placeholder="Nama">
                                     </div>
 
                                 </div>
                                 <div class="row pt-4">
                                     <div class="col-md-5">
                                         <!-- <label for="p207" class="form-label">Alamat</label> -->
-                                        <input type="text" class="form-control" id="p207" name="p207"
-                                            placeholder="Alamat">
+                                        <input type="text" class="form-control" id="alamat_responden"
+                                            name="alamat_responden" placeholder="Alamat">
                                     </div>
                                     <div class="col-md-3">
                                         <!-- <label for="p208" class="form-label">Nomor HP</label> -->
-                                        <input type="text" class="form-control" id="p208" name="p208"
+                                        <input type="text" class="form-control" id="nomor_hp" name="nomor_hp"
                                             placeholder="Nomor HP">
                                     </div>
                                     <div class="col-md-4">
                                         <!-- <label for="p209" class="form-label">No Telp Kabel/Rumah</label> -->
-                                        <input type="text" class="form-control" id="p209" name="p209"
-                                            placeholder="No Telp Kabel/Rumah">
+                                        <input type="text" class="form-control" id="no_telepon_rumah"
+                                            name="no_telepon_rumah" placeholder="No Telp Kabel/Rumah">
                                     </div>
                                 </div>
                             </div>
@@ -256,12 +242,13 @@ th h6 {
                         <h5 class="mt-3">P3. Deskripsi Keluarga</h5>
                         <div class="row mb-3">
                             <div class="col-md-4">
-                                <label for="p301" class="form-label">Nomor KK</label>
-                                <input type="text" class="form-control" id="p301" name="p301">
+                                <label for="no_kk" class="form-label">Nomor KK</label>
+                                <input type="text" class="form-control" id="no_kk" name="no_kk">
                             </div>
                             <div class="col-md-4">
-                                <label for="p302" class="form-label">NIK Kepala Keluarga</label>
-                                <input type="text" class="form-control" id="p302" name="p302">
+                                <label for="nik_kepala_keluarga" class="form-label">NIK Kepala Keluarga</label>
+                                <input type="text" class="form-control" id="nik_kepala_keluarga"
+                                    name="nik_kepala_keluarga">
                             </div>
                         </div>
                     </div>
@@ -302,8 +289,8 @@ th h6 {
                             <h5 class="mt-3">P4. Permukiman</h5>
                             <div class="row mb-3">
                                 <div class="col-md-4">
-                                    <label for="p401" class="form-label">Tempat tinggal yang ditempati</label>
-                                    <select class="form-select" id="p401" name="p401">
+                                    <label for="tempat_tinggal" class="form-label">Tempat tinggal yang ditempati</label>
+                                    <select class="form-select" id="tempat_tinggal" name="tempat_tinggal">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Milik sendiri</option>
                                         <option value="2">Kontrak/Sewa</option>
@@ -315,8 +302,8 @@ th h6 {
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label for="p402" class="form-label">Status lahan tempat tinggal</label>
-                                    <select class="form-select" id="p402" name="p402">
+                                    <label for="status_lahan" class="form-label">Status lahan tempat tinggal</label>
+                                    <select class="form-select" id="status_lahan" name="status_lahan">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Milik sendiri</option>
                                         <option value="2">Milik orang lain</option>
@@ -329,11 +316,11 @@ th h6 {
                                     <label class="form-label">Luas tempat tinggal</label>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <input type="number" class="form-control" id="p403_lantai"
-                                                name="p403_lantai" placeholder="Luas lantai (m2)">
+                                            <input type="number" class="form-control" id="luas_lantai"
+                                                name="luas_lantai" placeholder="Luas lantai (m2)">
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" class="form-control" id="p403_lahan" name="p403_lahan"
+                                            <input type="number" class="form-control" id="luas_lahan" name="luas_lahan"
                                                 placeholder="Luas lahan (m2)">
                                         </div>
                                     </div>
@@ -343,8 +330,9 @@ th h6 {
                             <div class="row mb-3">
                                 <!-- P404 -->
                                 <div class="col-md-3">
-                                    <label for="p404" class="form-label">Jenis lantai tempat tinggal terluas</label>
-                                    <select class="form-select" id="p404" name="p404">
+                                    <label for="jenis_lantai" class="form-label">Jenis lantai tempat tinggal
+                                        terluas</label>
+                                    <select class="form-select" id="jenis_lantai" name="jenis_lantai">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Marmer/granit</option>
                                         <option value="2">Keramik</option>
@@ -361,8 +349,8 @@ th h6 {
 
                                 <!-- P405 -->
                                 <div class="col-md-3">
-                                    <label for="p405" class="form-label">Dinding sebagian besar rumah</label>
-                                    <select class="form-select" id="p405" name="p405">
+                                    <label for="jenis_dinding" class="form-label">Dinding sebagian besar rumah</label>
+                                    <select class="form-select" id="jenis_dinding" name="jenis_dinding">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Semen/beton/kayu berkualitas tinggi</option>
                                         <option value="2">Kayu berkualitas rendah/bambu</option>
@@ -372,8 +360,8 @@ th h6 {
 
                                 <!-- P406 -->
                                 <div class="col-md-3">
-                                    <label for="p406" class="form-label">Jendela</label>
-                                    <select class="form-select" id="p406" name="p406">
+                                    <label for="jendela" class="form-label">Jendela</label>
+                                    <select class="form-select" id="jendela" name="jendela">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Ada, berfungsi</option>
                                         <option value="2">Ada, tidak berfungsi</option>
@@ -383,8 +371,8 @@ th h6 {
 
                                 <!-- P407 -->
                                 <div class="col-md-3">
-                                    <label for="p407" class="form-label">Atap</label>
-                                    <select class="form-select" id="p407" name="p407">
+                                    <label for="atap" class="form-label">Atap</label>
+                                    <select class="form-select" id="atap" name="atap">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Genteng</option>
                                         <option value="2">Kayu/Jerami</option>
@@ -396,8 +384,8 @@ th h6 {
                             <!-- P408 -->
                             <div class="row mb-3">
                                 <div class="col-md-3">
-                                    <label for="p408" class="form-label">Penerangan rumah</label>
-                                    <select class="form-select" id="p408" name="p408">
+                                    <label for="penerangan" class="form-label">Penerangan rumah</label>
+                                    <select class="form-select" id="penerangan" name="penerangan">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Listrik PLN</option>
                                         <option value="2">Listrik non PLN</option>
@@ -409,8 +397,8 @@ th h6 {
 
                                 <!-- P409 -->
                                 <div class="col-md-3">
-                                    <label for="p409" class="form-label">Energi untuk memasak</label>
-                                    <select class="form-select" id="p409" name="p409">
+                                    <label for="energi_masak" class="form-label">Energi untuk memasak</label>
+                                    <select class="form-select" id="energi_masak" name="energi_masak">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Gas kota / LPG / Biogas</option>
                                         <option value="2">Minyak tanah / Batu bara</option>
@@ -421,9 +409,10 @@ th h6 {
 
                                 <!-- P410 -->
                                 <div class="col-md-4">
-                                    <label for="p410" class="form-label">Jika menggunakan kayu bakar, sumber
+                                    <label for="sumber_kayu_bakar" class="form-label">Jika menggunakan kayu bakar,
+                                        sumber
                                         kayu</label>
-                                    <select class="form-select" id="p410" name="p410">
+                                    <select class="form-select" id="sumber_kayu_bakar" name="sumber_kayu_bakar">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Pembelian</option>
                                         <option value="2">Diambil dari hutan</option>
@@ -436,8 +425,8 @@ th h6 {
                             <div class="row mb-3">
                                 <!-- P411 -->
                                 <div class="col-md-3">
-                                    <label for="p411" class="form-label">Tempat pembuangan sampah</label>
-                                    <select class="form-select" id="p411" name="p411">
+                                    <label for="pembuangan_sampah" class="form-label">Tempat pembuangan sampah</label>
+                                    <select class="form-select" id="pembuangan_sampah" name="pembuangan_sampah">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Tidak ada</option>
                                         <option value="2">Di kebun/sungai/drainase</option>
@@ -450,8 +439,8 @@ th h6 {
 
                                 <!-- P412 -->
                                 <div class="col-md-3">
-                                    <label for="p412" class="form-label">Fasilitas MCK</label>
-                                    <select class="form-select" id="p412" name="p412">
+                                    <label for="fasilitas_mck" class="form-label">Fasilitas MCK</label>
+                                    <select class="form-select" id="fasilitas_mck" name="fasilitas_mck">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Sendiri</option>
                                         <option value="2">Berkelompok/tetangga</option>
@@ -462,8 +451,9 @@ th h6 {
 
                                 <!-- P413 -->
                                 <div class="col-md-3">
-                                    <label for="p413" class="form-label">Sumber air mandi terbanyak dari</label>
-                                    <select class="form-select" id="p413" name="p413">
+                                    <label for="sumber_air_mandi" class="form-label">Sumber air mandi terbanyak
+                                        dari</label>
+                                    <select class="form-select" id="sumber_air_mandi" name="sumber_air_mandi">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Ledeng/perpipaan berbayar/air isi ulang/kemasan</option>
                                         <option value="2">Perpipaan</option>
@@ -476,8 +466,8 @@ th h6 {
 
                                 <!-- P414 -->
                                 <div class="col-md-3">
-                                    <label for="p414" class="form-label">Fasilitas buang air besar</label>
-                                    <select class="form-select" id="p414" name="p414">
+                                    <label for="fasilitas_bab" class="form-label">Fasilitas buang air besar</label>
+                                    <select class="form-select" id="fasilitas_bab" name="fasilitas_bab">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Jamban sendiri</option>
                                         <option value="2">Jamban bersama/tetangga</option>
@@ -489,8 +479,9 @@ th h6 {
                             <div class="row mb-3">
                                 <!-- P415 -->
                                 <div class="col-md-5">
-                                    <label for="p415" class="form-label">Sumber air minum terbanyak dari</label>
-                                    <select class="form-select" id="p415" name="p415">
+                                    <label for="sumber_air_minum" class="form-label">Sumber air minum terbanyak
+                                        dari</label>
+                                    <select class="form-select" id="sumber_air_minum" name="sumber_air_minum">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Ledeng/perpipaan berbayar/air isi ulang/kemasan</option>
                                         <option value="2">Mata air / Perpipaan / Sumur</option>
@@ -502,8 +493,10 @@ th h6 {
 
                                 <!-- P416 -->
                                 <div class="col-md-5">
-                                    <label for="p416" class="form-label">Tempat pembuangan limbah cair</label>
-                                    <select class="form-select" id="p416" name="p416">
+                                    <label for="pembuangan_limbah_cair" class="form-label">Tempat pembuangan limbah
+                                        cair</label>
+                                    <select class="form-select" id="pembuangan_limbah_cair"
+                                        name="pembuangan_limbah_cair">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Tangki/instalasi pengelolaan limbah</option>
                                         <option value="2">Sawah/kolam/sungai/drainase/laut</option>
@@ -516,9 +509,9 @@ th h6 {
                             <div class="row mb-3">
                                 <!-- P417 -->
                                 <div class="col-md-5">
-                                    <label for="p417" class="form-label">Rumah berada di bawah
+                                    <label for="bawah_sutet" class="form-label">Rumah berada di bawah
                                         SUTET/SUTT/SUTTAS</label>
-                                    <select class="form-select" id="p417" name="p417">
+                                    <select class="form-select" id="bawah_sutet" name="bawah_sutet">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Ya</option>
                                         <option value="2">Tidak</option>
@@ -527,8 +520,8 @@ th h6 {
 
                                 <!-- P418 -->
                                 <div class="col-md-5">
-                                    <label for="p418" class="form-label">Rumah di bantaran sungai</label>
-                                    <select class="form-select" id="p418" name="p418">
+                                    <label for="bantaran_sungai" class="form-label">Rumah di bantaran sungai</label>
+                                    <select class="form-select" id="bantaran_sungai" name="bantaran_sungai">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Ya</option>
                                         <option value="2">Tidak</option>
@@ -539,8 +532,8 @@ th h6 {
                             <div class="row mb-3">
                                 <!-- P419 -->
                                 <div class="col-md-5">
-                                    <label for="p419" class="form-label">Rumah di lereng bukit/gunung</label>
-                                    <select class="form-select" id="p419" name="p419">
+                                    <label for="lereng_bukit" class="form-label">Rumah di lereng bukit/gunung</label>
+                                    <select class="form-select" id="lereng_bukit" name="lereng_bukit">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Ya</option>
                                         <option value="2">Tidak</option>
@@ -549,8 +542,9 @@ th h6 {
 
                                 <!-- P420 -->
                                 <div class="col-md-5">
-                                    <label for="p420" class="form-label">Secara keseluruhan kondisi rumah</label>
-                                    <select class="form-select" id="p420" name="p420">
+                                    <label for="kondisi_rumah" class="form-label">Secara keseluruhan kondisi
+                                        rumah</label>
+                                    <select class="form-select" id="kondisi_rumah" name="kondisi_rumah">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Kumuh</option>
                                         <option value="2">Tidak kumuh</option>
@@ -571,7 +565,7 @@ th h6 {
                                         <div class="card-style mb-30">
                                             <h6 class="mb-10">P421 - Akses Pendidikan terdekat</h6>
                                             <div class="table-wrapper table-responsive">
-                                                <table class="table striped-table">
+                                                <!-- <table class="table striped-table">
                                                     <thead>
                                                         <tr>
                                                             <th>
@@ -592,7 +586,6 @@ th h6 {
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <!-- daftar fasilitas pendidikan -->
                                                         <tr>
                                                             <td>
                                                                 <p>1
@@ -853,7 +846,301 @@ th h6 {
                                                             </td>
                                                         </tr>
                                                     </tbody>
+                                                </table> -->
+
+                                                <table class="table striped-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <h6>No</h6>
+                                                            </th>
+                                                            <th>
+                                                                <h6>Fasilitas</h6>
+                                                            </th>
+                                                            <th>
+                                                                <h6>Jarak (km)</h6>
+                                                            </th>
+                                                            <th>
+                                                                <h6>Waktu Tempuh (jam)</h6>
+                                                            </th>
+                                                            <th>
+                                                                <h6>Kemudahan</h6>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- daftar fasilitas pendidikan -->
+                                                        <tr>
+                                                            <td>
+                                                                <p>1</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>PAUD</p>
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[0][fasilitas]" value="PAUD">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[0][id_fasilitas]" value="1">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[0][jarak_km]" step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[0][waktu_tempuh_jam]"
+                                                                    step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control"
+                                                                    name="akses_pendidikan[0][kemudahan]">
+                                                                    <option value="">-- pilih --</option>
+                                                                    <option value="1">Mudah</option>
+                                                                    <option value="2">Sulit</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p>2</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>TK/RA</p>
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[1][fasilitas]" value="TK/RA">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[1][id_fasilitas]" value="2">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[1][jarak_km]" step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[1][waktu_tempuh_jam]"
+                                                                    step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control"
+                                                                    name="akses_pendidikan[1][kemudahan]">
+                                                                    <option value="">-- pilih --</option>
+                                                                    <option value="1">Mudah</option>
+                                                                    <option value="2">Sulit</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p>3</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>SD/MI</p>
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[2][fasilitas]" value="SD/MI">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[2][id_fasilitas]" value="3">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[2][jarak_km]" step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[2][waktu_tempuh_jam]"
+                                                                    step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control"
+                                                                    name="akses_pendidikan[2][kemudahan]">
+                                                                    <option value="">-- pilih --</option>
+                                                                    <option value="1">Mudah</option>
+                                                                    <option value="2">Sulit</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p>4</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>SMP/MTs</p>
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[3][fasilitas]"
+                                                                    value="SMP/MTs">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[3][id_fasilitas]" value="4">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[3][jarak_km]" step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[3][waktu_tempuh_jam]"
+                                                                    step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control"
+                                                                    name="akses_pendidikan[3][kemudahan]">
+                                                                    <option value="">-- pilih --</option>
+                                                                    <option value="1">Mudah</option>
+                                                                    <option value="2">Sulit</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p>5</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>SMA/MA</p>
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[4][fasilitas]"
+                                                                    value="SMA/MA">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[4][id_fasilitas]" value="5">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[4][jarak_km]" step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[4][waktu_tempuh_jam]"
+                                                                    step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control"
+                                                                    name="akses_pendidikan[4][kemudahan]">
+                                                                    <option value="">-- pilih --</option>
+                                                                    <option value="1">Mudah</option>
+                                                                    <option value="2">Sulit</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p>6</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>Perguruan tinggi</p>
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[5][fasilitas]"
+                                                                    value="Perguruan tinggi">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[5][id_fasilitas]" value="6">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[5][jarak_km]" step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[5][waktu_tempuh_jam]"
+                                                                    step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control"
+                                                                    name="akses_pendidikan[5][kemudahan]">
+                                                                    <option value="">-- pilih --</option>
+                                                                    <option value="1">Mudah</option>
+                                                                    <option value="2">Sulit</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p>7</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>Pesantren</p>
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[6][fasilitas]"
+                                                                    value="Pesantren">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[6][id_fasilitas]" value="7">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[6][jarak_km]" step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[6][waktu_tempuh_jam]"
+                                                                    step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control"
+                                                                    name="akses_pendidikan[6][kemudahan]">
+                                                                    <option value="">-- pilih --</option>
+                                                                    <option value="1">Mudah</option>
+                                                                    <option value="2">Sulit</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p>8</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>Seminari</p>
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[7][fasilitas]"
+                                                                    value="Seminari">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[7][id_fasilitas]" value="8">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[7][jarak_km]" step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[7][waktu_tempuh_jam]"
+                                                                    step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control"
+                                                                    name="akses_pendidikan[7][kemudahan]">
+                                                                    <option value="">-- pilih --</option>
+                                                                    <option value="1">Mudah</option>
+                                                                    <option value="2">Sulit</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p>9</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>Pendidikan keagamaan lain</p>
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[8][fasilitas]"
+                                                                    value="Pendidikan keagamaan lain">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[8][id_fasilitas]" value="9">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[8][jarak_km]" step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control"
+                                                                    name="akses_pendidikan[8][waktu_tempuh_jam]"
+                                                                    step="0.01">
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control"
+                                                                    name="akses_pendidikan[8][kemudahan]">
+                                                                    <option value="">-- pilih --</option>
+                                                                    <option value="1">Mudah</option>
+                                                                    <option value="2">Sulit</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
                                                 </table>
+
+
                                             </div>
                                         </div>
                                     </div>
@@ -3852,7 +4139,7 @@ th h6 {
 
                         </div>
 
-                        <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+                        <button type="submit" id="saveSDGS" class="btn btn-primary mt-3">Simpan</button>
                         </form>
                     </div>
                 </div>
@@ -3902,11 +4189,6 @@ $('#enumeratorSelect').on('select2:open', function() {
 
 $(document).ready(function() {
 
-
-
-
-
-
     $('#enumeratorSelect').select2({
         theme: 'bootstrap-5', // cocok dengan Bootstrap 5 (PlainAdmin)
         placeholder: 'Pilih Enumerator',
@@ -3927,6 +4209,64 @@ $(document).ready(function() {
                 };
             }
         }
+    });
+
+
+
+    // Simpan data (sementara alert, nanti diisi AJAX insert)
+    $("#saveSDGS").click(function(e) {
+        e.preventDefault(); // Pastikan untuk mencegah reload halaman
+
+        let formData = $("#sdgsForm").serialize();
+        console.log("Data yang dikirim:", formData);
+
+        $.ajax({
+            url: "/survey/simpan", // route CI4
+            type: "POST",
+            data: formData,
+            dataType: "json",
+            success: function(response) {
+                if (response.status === "success") {
+                    $("#kuesionerModal").modal("hide");
+                    $("#sdgsForm")[0].reset(); // Pastikan ini adalah id form yang benar
+                    // loadEnumerators(1, ""); // reload data
+                    alert(response.message);
+                } else {
+                    // Menampilkan error validasi atau server
+                    let errorMessage = "Gagal: " + response.message;
+
+                    // Jika ada error detail
+                    if (response.errors) {
+                        errorMessage += "\n\nDetail Error:";
+                        for (let key in response.errors) {
+                            errorMessage += "\n- " + response.errors[key];
+                        }
+                    }
+
+                    alert(errorMessage);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error("XHR Response:", xhr.responseText);
+                console.error("Status:", status);
+                console.error("Error:", error);
+
+                let errorMessage = "Terjadi kesalahan AJAX!\n";
+
+                try {
+                    // Coba parsing response JSON jika ada
+                    const response = JSON.parse(xhr.responseText);
+                    if (response.message) {
+                        errorMessage += "Pesan: " + response.message;
+                    }
+                } catch (e) {
+                    // Jika bukan JSON, tampilkan response text biasa
+                    errorMessage += "Response: " + xhr.responseText;
+                }
+
+                alert(errorMessage);
+            }
+        });
     });
 
 
@@ -3965,44 +4305,6 @@ $(document).ready(function() {
             <p class="mt-2">Memuat form...</p>
         </div>
     `);
-
-        // $.get('<?= site_url('kuesioner/create') ?>', function(response) {
-        //     if (response.fields_enumerators) {
-        //         let formHtml = `<form id="formKuesioner">`;
-
-        //         response.fields_enumerators.forEach(field => {
-        //             // skip kalau field 'id' atau 'created_at'
-        //             if (field === 'id' || field === 'created_at') return;
-
-        //             formHtml += `
-        //                 <div class="mb-3">
-        //                     <label for="${field}" class="form-label text-capitalize">${field.replace('_',' ')}</label>
-        //                     <input type="text" class="form-control" id="${field}" name="${field}" placeholder="Masukkan ${field}">
-        //                 </div>
-        //             `;
-        //         });
-
-        //         formHtml += `
-        //             <div class="d-flex justify-content-end">
-        //                 <button type="submit" class="btn btn-primary">Simpan</button>
-        //             </div>
-        //         </form>`;
-
-        //         $('#modalContent').html(formHtml);
-        //     } else {
-        //         $('#modalContent').html(`
-        //             <div class="alert alert-warning">
-        //                 Tidak ada field ditemukan.
-        //             </div>
-        //         `);
-        //     }
-        // }, 'json').fail(function() {
-        //     $('#modalContent').html(`
-        //         <div class="alert alert-danger">
-        //             Gagal memuat form. Silakan refresh halaman dan coba lagi.
-        //         </div>
-        //     `);
-        // });
     });
 
 

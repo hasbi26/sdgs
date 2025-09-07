@@ -22,3 +22,6 @@ $routes->get('enumerator/(:num)', 'EnumeratorController::getById/$1');
 $routes->post('enumerator/update/(:num)', 'EnumeratorController::update/$1');
 $routes->delete('enumerator/(:num)', 'EnumeratorController::delete/$1');
 $routes->get('enumerator/options', 'EnumeratorController::getEnumerators');
+
+
+$routes->post('survey/simpan', 'SurveyController::simpanDataSurvey');

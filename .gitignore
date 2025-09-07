@@ -46,6 +46,8 @@ coverage/
 /writable/
 
 
+/db/
+
 # Backup files
 *.bak
 *.tmp
