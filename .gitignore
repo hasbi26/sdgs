@@ -43,6 +43,9 @@ phpunit.xml.dist
 # Coverage
 coverage/
 
+/writable/
+
+
 # Backup files
 *.bak
 *.tmp

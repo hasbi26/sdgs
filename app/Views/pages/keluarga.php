@@ -8,11 +8,61 @@ th h6 {
     font-size: 14px;
     /* sesuai tema */
 }
+
+.select2-search__field {
+    user-select: text !important;
+}
+
+
+/* pastikan input search Select2 bisa diketik */
+.select2-container .select2-search__field {
+    display: block !important;
+    width: 100% !important;
+    padding: 6px 8px !important;
+    font-size: 14px !important;
+    color: #000 !important;
+    background-color: #fff !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+}
+
+/* Pastikan selalu ada border */
+.select2-container--bootstrap-5 .select2-selection {
+    border: 1px solid #ced4da !important;
+    /* default bootstrap border */
+    border-radius: 0.375rem !important;
+    /* biar sama dengan form-control */
+    min-height: calc(1.5em + .75rem + 2px) !important;
+    padding: .375rem .75rem !important;
+    display: flex !important;
+    align-items: center !important;
+    /* biar text selalu di tengah */
+    min-height: calc(1.5em + .75rem + 2px) !important;
+    /* sama dgn .form-select */
+    padding: .375rem .75rem !important;
+}
+
+/* Saat fokus tetap ada border biru Bootstrap */
+.select2-container--bootstrap-5 .select2-selection:focus {
+    border-color: #86b7fe !important;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .25) !important;
+    outline: 0 !important;
+}
+
+.select2-container--bootstrap-5 .select2-selection__rendered {
+    line-height: 1.5 !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+}
+
+
+/* biar dropdown selalu kelihatan di atas modal */
+.select2-container.select2-container--open {
+    z-index: 9999 !important;
+}
 </style>
 
 <section class="section">
-
-
     <!-- ========== table components start ========== -->
     <section class="table-components">
         <div class="container-fluid">
@@ -37,13 +87,20 @@ th h6 {
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card-style mb-30">
-                            <!-- <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#kuesionerModal">
-                                <i class="fas fa-plus"></i> Tambah Data
-                            </button> -->
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <button class="btn btn-info btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#kuesionerModal">
+                                        Tambah Data <i class="lni lni-circle-plus"></i>
+                                    </button>
+                                </div>
 
-                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#kuesionerModal">
-                                Tambah Data <i class="lni lni-circle-plus"></i>
-                            </button>
+                                <div class="col-md-4 ms-auto">
+                                    <input type="text" id="search" class="form-control"
+                                        placeholder="Cari nama, alamat atau telepon...">
+                                </div>
+                            </div>
+
 
                             <div class="table-wrapper table-responsive">
                                 <table class="table">
@@ -114,36 +171,6 @@ th h6 {
         </div>
         <!-- end container -->
     </section>
-    <!-- ========== table components end ========== -->
-
-
-    <!-- <div class="container-fluid">
-    
-    <div class="card shadow mb-4">
-        <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <h6 class="m-0 font-weight-bold text-primary">Data Kuesioner SDGS</h6>
-            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kuesionerModal">
-                <i class="fas fa-plus"></i> Tambah Data
-            </button>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>No. KK</th>
-                            <th>Enumerator</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div> -->
-
     <!-- Modal Kuesioner -->
     <div class="modal fade" id="kuesionerModal" tabindex="-1" aria-labelledby="kuesionerModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
@@ -159,17 +186,25 @@ th h6 {
                             <!-- form create -->
                             <form action="#" method="post">
                                 <!-- P1 DESKRIPSI ENUMERATOR -->
-                                <div class="card-style mb-10">
+                                <!-- <div class="card-style mb-10">
                                     <h6 class="mb-25">P1. Deskripsi Enumerator</h6>
 
                                     <label>Select Enumerator</label>
                                     <div class="select-position">
-                                        <select class="form-select">
+                                        <select id="enumeratorSelect" class="form-select">
                                             <option value="">Select Enumerator</option>
                                             <option value="">Sajali</option>
                                             <option value="">Ahmad</option>
                                             <option value="">Asep</option>
                                         </select>
+                                    </div>
+                                </div> -->
+                                <div class="card-style mb-10">
+                                    <h6 class="mb-25">P1. Deskripsi Enumerator</h6>
+
+                                    <label for="enumeratorSelect">Select Enumerator</label>
+                                    <div class="select-position">
+                                        <select id="enumeratorSelect" style="width: 100%"></select>
                                     </div>
                                 </div>
                         </div>
@@ -3855,7 +3890,46 @@ th h6 {
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 <script>
+$('#enumeratorSelect').on('select2:open', function() {
+    // Fokus paksa ke input search ketika dropdown terbuka
+    let searchField = document.querySelector('.select2-search__field');
+    if (searchField) {
+        searchField.focus();
+    }
+});
+
+
+
 $(document).ready(function() {
+
+
+
+
+
+
+    $('#enumeratorSelect').select2({
+        theme: 'bootstrap-5', // cocok dengan Bootstrap 5 (PlainAdmin)
+        placeholder: 'Pilih Enumerator',
+        dropdownParent: $('#kuesionerModal'), // penting kalau dipakai dalam modal
+        allowClear: true,
+        ajax: {
+            url: "<?= base_url('enumerator/options') ?>", // endpoint CI4
+            dataType: 'json',
+            delay: 250,
+            data: function(params) {
+                return {
+                    q: params.term
+                }; // kirim keyword pencarian
+            },
+            processResults: function(data) {
+                return {
+                    results: data
+                };
+            }
+        }
+    });
+
+
     // Inisialisasi DataTables
     $('#dataTable').DataTable({
         processing: true,
