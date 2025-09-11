@@ -25,3 +25,6 @@ $routes->get('enumerator/options', 'EnumeratorController::getEnumerators');
 
 
 $routes->post('survey/simpan', 'SurveyController::simpanDataSurvey');
+$routes->post('data/update/(:num)', 'SurveyController::update/$1');
+$routes->get('data/fetchData', 'SurveyController::fetchData');
+$routes->get('data/getDetail/(:num)', 'SurveyController::fetchDataDetail/$1');
