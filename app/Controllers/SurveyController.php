@@ -67,61 +67,13 @@ class SurveyController extends BaseController
     }
 
 
-    // public function fetchDataDetail($id)
-    // {
-    //     $db = Database::connect();
-    //     $builder = $db->table('individu')
-    //         ->select('
-    //             individu.*,
-    //             keluarga.*,
-    //             enumerator.*,
-    //             permukiman.*,
-    //             lokasi.*,
-
-    //         ')
-    //         ->join('keluarga', 'keluarga.id = individu.keluarga_id')
-    //         ->join('enumerator', 'enumerator.id = keluarga.enumerator_id')
-    //         ->join('permukiman', 'permukiman.keluarga_id = keluarga.id')
-    //         ->join('lokasi', 'lokasi.id = keluarga.lokasi_id')
-    //         ->where('individu.id', $id);
-
-    //         $permukiman_id = $db->table('individu')->select('permukiman.id*')
-    //         ->join('keluarga', 'keluarga.id = individu.keluarga_id', 'left')
-    //         ->join('permukiman', 'permukiman.keluarga_id = keluarga.id', 'left')
-    //         ->where('individu.id', $id)
-    //         ->get()
-    //         ->getRowArray();
-
-
-
-    //         $aksesPendidikan = $db->table('akses_pendidikan')
-    //                         ->where('permukiman_id', $permukiman_id)
-    //                         ->get()
-    //                         ->getResultArray();
-
-
-
-    //     $data = $builder->get()->getResultArray();
-
-    //     return $this->response->setJSON([
-    //         'data'       => $data,
-    //         'akses_Pendidikan' => $permukiman_id 
-    //     ]);
-    // }
-
-
-
     public function fetchDataDetail($id)
 {
 
     $db = \Config\Database::connect();
-            $builder = $db->table('individu')
+        $builder = $db->table('individu')
             ->select('
                 individu.*,
-                keluarga.*,
-                enumerator.*,
-                permukiman.*,
-                lokasi.*,
                 individu.nama AS nama_individu
 
 
@@ -133,6 +85,41 @@ class SurveyController extends BaseController
             ->where('individu.id', $id);
 
         $data = $builder->get()->getResultArray();
+
+
+        $permukiman = $db->table('individu')
+        ->select('
+            permukiman.*
+
+        ')
+        ->join('keluarga', 'keluarga.id = individu.keluarga_id')
+        ->join('permukiman', 'permukiman.keluarga_id = keluarga.id')       
+        ->where('individu.id', $id);
+
+        $datapermukiman = $permukiman->get()->getResultArray();
+
+        $keluarga = $db->table('individu')
+        ->select('
+            keluarga.*,
+            enumerator.nama as enumerator_nama, enumerator.id as enumerator_id
+
+        ')
+        ->join('keluarga', 'keluarga.id = individu.keluarga_id')
+        ->join('enumerator', 'enumerator.id = keluarga.enumerator_id')
+        ->where('individu.id', $id);
+
+        $datakeluarga = $keluarga->get()->getResultArray();
+
+
+        $lokasi = $db->table('individu')
+        ->select('
+            lokasi.*
+        ')
+        ->join('keluarga', 'keluarga.id = individu.keluarga_id')
+        ->join('lokasi', 'lokasi.id = keluarga.lokasi_id')       
+        ->where('individu.id', $id);
+
+        $datalokasi = $lokasi->get()->getResultArray();
 
 
     // Ambil data utama (hindari penggunaan banyak * pada tabel yang di-join jika ingin aman)
@@ -276,6 +263,10 @@ class SurveyController extends BaseController
         'pendidikan' => $pendidikan,
         'pekerjaan' => $pekerjaan,
         'sumber_penghasilan' => $sumberPenghasilan,
+        'sumber_penghasilan' => $sumberPenghasilan,
+        'datapermukiman' => $datapermukiman,
+        'datalokasi' => $datalokasi,
+        'datakeluarga' => $datakeluarga
 
     ]);
 }
@@ -431,10 +422,10 @@ class SurveyController extends BaseController
             }
 
                         // 6. Simpan data akses prasarana transportasi
-                        $aksesTransportasiModel = new AksesTransportasiModel();
-                        $aksesTransportasiData = $this->request->getPost('transportasi');
+            $aksesTransportasiModel = new AksesTransportasiModel();
+            $aksesTransportasiData = $this->request->getPost('transportasi');
                         
-                        if (!empty($aksesTransportasiData)) {
+            if (!empty($aksesTransportasiData)) {
                             foreach ($aksesTransportasiData as $data) {
                                 // Hanya simpan jika ada data jarak, waktu, atau kemudahan
                                 if (!empty($data['jenis']) || !empty($data['waktu']) || !empty($data['biaya'] || !empty($data['kemudahan']) )) {
@@ -456,13 +447,13 @@ class SurveyController extends BaseController
                         }
 
                                                 // 7. Simpan data akses nakes
-                                                $aksesTenagaKesehatanModel = new AksesTenagaKesehatanModel();
-                                                $aksesTenagaKesehatanData = $this->request->getPost('tenaga_kesehatan');
+            $aksesTenagaKesehatanModel = new AksesTenagaKesehatanModel();
+            $aksesTenagaKesehatanData = $this->request->getPost('tenaga_kesehatan');
                                                 
-                                                if (!empty($aksesTenagaKesehatanData)) {
-                                                    foreach ($aksesTenagaKesehatanData as $data) {
+            if (!empty($aksesTenagaKesehatanData)) {
+             foreach ($aksesTenagaKesehatanData as $data) {
                                                         // Hanya simpan jika ada data jarak, waktu, atau kemudahan
-                                                        if (!empty($data['fasilitas']) || !empty($data['jarak']) || !empty($data['waktu'] || !empty($data['kemudahan']) )) {
+             if (!empty($data['fasilitas']) || !empty($data['jarak']) || !empty($data['waktu'] || !empty($data['kemudahan']) )) {
                                                             $TenagaKesahatanData = [
                                                                 'permukiman_id' => $permukimanId,
                                                                 'tenaga_kesehatan' => $data['fasilitas'],
@@ -479,9 +470,9 @@ class SurveyController extends BaseController
                                                 }
 
                                                 // 9. Simpan data program bantuan
-                                                $programPemerintahModel = new ProgramPemerintahModel();
+            $programPemerintahModel = new ProgramPemerintahModel();
 
-                                                $programBantuanData = [
+            $programBantuanData = [
                                                     'permukiman_id'       => $permukimanId,
                                                     'blt_dana_desa'       => $this->request->getPost('blt_dana_desa') ?? null,
                                                     'pkh'                 => $this->request->getPost('pkh') ?? null,
@@ -654,12 +645,21 @@ class SurveyController extends BaseController
 
                                                 ];
 
+                                                log_message('debug', 'Data yang akan disimpan ke tabel kesehatan: ' . print_r($data, true));
+                                                log_message('debug', 'Post data lengkap: ' . print_r($this->request->getPost(), true));
+                                                log_message('debug', 'Individu ID: ' . $individu_id);
+                                                
                                                 if (!$kesehatanModel->insert($data)) {
+                                                    log_message('error', 'Gagal insert data kesehatan. Error: ' . print_r($kesehatanModel->errors(), true));
+                                                    log_message('error', 'Last Query: ' . $kesehatanModel->getLastQuery());
+                                                
                                                     return $this->response->setJSON([
                                                         'status'  => 'error',
                                                         'message' => $kesehatanModel->errors(),
                                                     ]);
                                                 }
+                                                
+                                                log_message('info', 'Berhasil insert data kesehatan dengan ID: ' . $kesehatanModel->getInsertID());
 
                                                 //14 pendidikan 
 
@@ -720,15 +720,147 @@ class SurveyController extends BaseController
         $db = \Config\Database::connect();
         $db->transStart();
 
+        $post = $this->request->getPost();
+        log_message('debug', 'POST payload: ' . print_r($post, true));
+
         try {
             $request = $this->request->getPost();
+      
+        // ================= LOKASI =================
+
+        $lokasiModel = new LokasiModel();
+            // Filter data dengan prefix 'lokasi'
+            $lokasiData = [];
+            foreach ($request as $key => $value) {
+                if (strpos($key, 'lokasi_') === 0) {
+                    $fieldName = str_replace('lokasi_', '', $key);
+                    $lokasiData[$fieldName] = $value;
+                }
+            }
+
+            log_message('debug', 'lokasi payload: ' . print_r($lokasiData, true));
+
+            // Jika ada lokasi_id, tambahkan ke data
+            if (!empty($request['lokasi_id'])) {
+                $lokasiData['id'] = $request['lokasi_id'];
+            }
+
+            if (!empty($lokasiData)) {
+                if (!empty($lokasiData['id'])) {
+                    $id = $lokasiData['id'];
+                    unset($lokasiData['id']); // Hapus id dari data karena tidak termasuk dalam allowedFields
+                    $lokasiModel->update($id, $lokasiData);
+                    $lokasiId = $id;
+                } else {
+                    // Tambahkan keluarga_id jika diperlukan
+                    $lokasiData['keluarga_id'] = $request['keluarga_id'] ?? null;
+                    $lokasiId = $lokasiModel->insert($lokasiData);
+                }
+            }
+
+
+                    // ================= KELUARGA =================
+
+        $keluargaModel = new KeluargaModel();
+        // Filter data dengan prefix 'keluarga'
+        $keluargaData = [];
+        foreach ($request as $key => $value) {
+            if (strpos($key, 'keluarga_') === 0) {
+                $fieldName = str_replace('keluarga_', '', $key);
+                $keluargaData[$fieldName] = $value;
+            }
+
+            if ($key === 'enumerator_id') {
+                $keluargaData['enumerator_id'] = $value;
+            }
+        }
+
+        log_message('debug', 'keluarga payload: ' . print_r($keluargaData, true));
+
+        // Jika ada keluarga_id, tambahkan ke data
+        if (!empty($request['keluarga_id'])) {
+            $keluargaData['id'] = $request['keluarga_id'];
+        }
+
+        if (!empty($keluargaData)) {
+            if (!empty($keluargaData['id'])) {
+                $id = $keluargaData['id'];
+                unset($keluargaData['id']); // Hapus id dari data karena tidak termasuk dalam allowedFields
+                $keluargaModel->update($id, $keluargaData);
+                $keluargaId = $id;
+            } else {
+                // Tambahkan keluarga_id jika diperlukan
+                $keluargaData['keluarga_id'] = $request['keluarga_id'] ?? null;
+                $keluargaId = $keluargaModel->insert($keluargaData);
+            }
+        }
+
+
+           
+        // ================= permukiman =================
+
+            $permukimanModel = new PermukimanModel();
+            // Filter data dengan prefix 'permukiman'
+            $permukimanData = [];
+            foreach ($request as $key => $value) {
+                if (strpos($key, 'permukiman_') === 0) {
+                    $fieldName = str_replace('permukiman_', '', $key);
+                    $permukimanData[$fieldName] = $value;
+                }
+            }
+            // Jika ada permukiman_id, tambahkan ke data
+            if (!empty($request['permukiman_id'])) {
+                $permukimanData['id'] = $request['permukiman_id'];
+            }
+
+            if (!empty($permukimanData)) {
+                if (!empty($permukimanData['id'])) {
+                    $id = $permukimanData['id'];
+                    unset($permukimanData['id']); // Hapus id dari data karena tidak termasuk dalam allowedFields
+                    $permukimanModel->update($id, $permukimanData);
+                    $permukimanId = $id;
+                } else {
+                    // Tambahkan keluarga_id jika diperlukan
+                    $permukimanData['keluarga_id'] = $request['keluarga_id'] ?? null;
+                    $permukimanId = $permukimanModel->insert($permukimanData);
+                }
+            }
+
 
             // ================= INDIVIDU =================
+
             $individuModel = new IndividuModel();
-            if (!empty($request['individu'])) {
-                $individuData = $request['individu'];
-                $individuModel->update($id, $individuData);
+            $individuData = [];
+            foreach ($request as $key => $value) {
+                if (strpos($key, 'individu_') === 0) {
+                    $fieldName = str_replace('individu_', '', $key);
+                    $individuData[$fieldName] = $value;
+                }
             }
+            // Jika ada individu_id, tambahkan ke data
+            if (!empty($request['individu_id'])) {
+                $individuData['id'] = $request['individu_id'];
+            }
+
+            if (!empty($individuData)) {
+                if (!empty($individuData['id'])) {
+                    $id = $individuData['id'];
+                    unset($individuData['id']); // Hapus id dari data karena tidak termasuk dalam allowedFields
+                    $individuModel->update($id, $individuData);
+                    $individuId = $id;
+                } else {
+                    // Tambahkan keluarga_id jika diperlukan
+                    // $individuData['keluarga_id'] = $request['keluarga_id'] ?? null;
+                    $individuId = $individuModel->insert($individuData);
+                }
+            }
+
+            // $individuModel = new IndividuModel();
+            // if (!empty($request['individu'])) {
+            //     $individuData = $request['individu'];
+            //     log_message('debug', 'Update Individu: '. print_r($individuData, true));
+            //     $individuModel->update($id, $individuData);
+            // }
 
             // ================= AKSES PENDIDIKAN =================
             $aksesPendidikanModel = new AksesPendidikanModel();
@@ -783,40 +915,122 @@ class SurveyController extends BaseController
             }
 
             // ================= PROGRAM PEMERINTAH =================
+            // $programPemerintahModel = new ProgramPemerintahModel();
+            // if (!empty($request['program_pemerintah'])) {
+            //     $row = $request['program_pemerintah'];
+            //     if (!empty($row['id'])) {
+            //         $programPemerintahModel->update($row['id'], $row);
+            //     } else {
+            //         $row['permukiman_id'] = $request['individu']['permukiman_id'] ?? null;
+            //         $programPemerintahModel->insert($row);
+            //     }
+            // }
+
             $programPemerintahModel = new ProgramPemerintahModel();
             if (!empty($request['program_pemerintah'])) {
                 $row = $request['program_pemerintah'];
+                
+                // Debug data
+                log_message('debug', 'Program pemerintah data: ' . print_r($row, true));
+                
                 if (!empty($row['id'])) {
-                    $programPemerintahModel->update($row['id'], $row);
+                    // UPDATE
+                    $result = $programPemerintahModel->update($row['id'], $row);
+                    if (!$result) {
+                        log_message('error', 'Update error: ' . print_r($programPemerintahModel->errors(), true));
+                    }
                 } else {
-                    $row['permukiman_id'] = $request['individu']['permukiman_id'] ?? null;
-                    $programPemerintahModel->insert($row);
+                    // INSERT - Jangan overwrite permukiman_id yang sudah ada
+                    // HAPUS BARIS INI: $row['permukiman_id'] = $request['individu']['permukiman_id'] ?? null;
+                    
+                    $result = $programPemerintahModel->insert($row);
+                    if (!$result) {
+                        log_message('error', 'Insert error: ' . print_r($programPemerintahModel->errors(), true));
+                    } else {
+                        log_message('debug', 'Insert successful! New ID: ' . $programPemerintahModel->getInsertID());
+                    }
                 }
             }
 
             // ================= KESEHATAN =================
-            $kesehatanModel = new KesehatanModel();
-            if (!empty($request['kesehatan'])) {
-                $row = $request['kesehatan'];
-                if (!empty($row['id'])) {
-                    $kesehatanModel->update($row['id'], $row);
-                } else {
-                    $row['individu_id'] = $id;
-                    $kesehatanModel->insert($row);
-                }
-            }
+
+                        $kesehatanModel = new KesehatanModel();
+                        $kesehatanData = [];
+                        foreach ($request as $key => $value) {
+                            if (strpos($key, 'kesehatan_') === 0) {
+                                $fieldName = str_replace('kesehatan_', '', $key);
+                                $kesehatanData[$fieldName] = $value;
+                            }
+                        }
+
+                        log_message('debug', 'kesehatanData ' . print_r($kesehatanData, true));
+
+                        // Jika ada kesehatan_id, tambahkan ke data
+                        if (!empty($request['kesehatan_id'])) {
+                            $kesehatanData['id'] = $request['kesehatan_id'];
+                        }
+            
+                        if (!empty($kesehatanData)) {
+                            if (!empty($kesehatanData['id'])) {
+                                $id = $kesehatanData['id'];
+                                unset($kesehatanData['id']); // Hapus id dari data karena tidak termasuk dalam allowedFields
+                                $kesehatanModel->update($id, $kesehatanData);
+                                $kesehatanId = $id;
+                            } else {
+                                // Tambahkan keluarga_id jika diperlukan
+                                // $kesehatanData['keluarga_id'] = $request['keluarga_id'] ?? null;
+                                $kesehatanId = $kesehatanModel->insert($kesehatanData);
+                            }
+                        }
 
             // ================= PENDIDIKAN =================
+
+
             $pendidikanModel = new PendidikanModel();
-            if (!empty($request['pendidikan'])) {
-                $row = $request['pendidikan'];
-                if (!empty($row['id'])) {
-                    $pendidikanModel->update($row['id'], $row);
-                } else {
-                    $row['individu_id'] = $id;
-                    $pendidikanModel->insert($row);
+            $pendidikanData = [];
+            foreach ($request as $key => $value) {
+                if (strpos($key, 'pendidikan_') === 0) {
+                    // Khusus untuk "pendidikan_pendidikan_tertinggi"
+                    if ($key === 'pendidikan_pendidikan_tertinggi') {
+                        $pendidikanData['pendidikan_tertinggi'] = $value;
+                    } else {
+                        // buang prefix pertama
+                        $fieldName = str_replace('pendidikan_', '', $key);
+                        $pendidikanData[$fieldName] = $value;
+                    }
                 }
             }
+            
+
+            log_message('debug', 'pendidikanData ' . print_r($pendidikanData, true));
+
+            // Jika ada pendidikan_id, tambahkan ke data
+            if (!empty($request['pendidikan_id'])) {
+                $pendidikanData['id'] = $request['pendidikan_id'];
+            }
+
+            if (!empty($pendidikanData)) {
+                if (!empty($pendidikanData['id'])) {
+                    $id = $pendidikanData['id'];
+                    unset($pendidikanData['id']); // Hapus id dari data karena tidak termasuk dalam allowedFields
+                    $pendidikanModel->update($id, $pendidikanData);
+                    $pendidikanId = $id;
+                } else {
+                    // Tambahkan keluarga_id jika diperlukan
+                    // $pendidikanData['keluarga_id'] = $request['keluarga_id'] ?? null;
+                    $pendidikanId = $pendidikanModel->insert($pendidikanData);
+                }
+            }
+            // $pendidikanModel = new PendidikanModel();
+            // if (!empty($request['pendidikan'])) {
+            //     $row = $request['pendidikan'];
+            //     if (!empty($row['id'])) {
+            //         $pendidikanModel->update($row['id'], $row);
+            //     } else {
+            //         $row['individu_id'] = $id;
+            //         $pendidikanModel->insert($row);
+            //     }
+            // }
 
             // ================= PEKERJAAN =================
             $pekerjaanModel = new PekerjaanModel();
@@ -834,24 +1048,17 @@ class SurveyController extends BaseController
             // ================= SUMBER PENGHASILAN =================
             $sumberPenghasilanModel = new SumberPenghasilanModel();
             if (!empty($request['sumber_penghasilan'])) {
-                // foreach ($request['sumber_penghasilan'] as $row) {
-                //     if (!empty($row['id'])) {
-                //         $sumberPenghasilanModel->update($row['id'], $row);
-                //     } else {
-                //         $row['pekerjaan_id'] = $pekerjaanId ?? null;
-                //         $sumberPenghasilanModel->insert($row);
-                //     }
-                // }
-
                 foreach ($request['sumber_penghasilan'] as $row) {
-                    if (!empty($row['id'])) {
-                        $sumberPenghasilanModel->update($row['id'], $row);
+                    if (isset($row['id']) && !empty($row['id'])) {
+                        $id = $row['id'];
+                        unset($row['id']); // jangan ikut update primary key
+                        if ($sumberPenghasilanModel->update($id, $row) !== false) {
+                            // sukses, meski affectedRows = 0
+                        }
                     } else {
+                        log_message('debug', 'penghasilan?? ' . print_r($row, true));
 
-                        log_message('debug', 'Row diterima: ' . print_r($row, true));
-
-                        // Jangan overwrite kalau sudah ada di $row
-                        $sumberPenghasilanModel->insert($row);
+                        // $sumberPenghasilanModel->insert($row);
                     }
                 }
                 
@@ -880,6 +1087,163 @@ class SurveyController extends BaseController
             return $this->response->setJSON(['status' => false, 'message' => $e->getMessage()]);
         }
     }
+
+
+
+
+    public function deleteByIndividuId($individuId)
+    {
+        $db = \Config\Database::connect();
+        $db->transStart(); // Start transaction
+
+        try {
+            // 1. Delete dari tabel-tabel yang berelasi dengan individu_id
+            $this->deleteRelatedToIndividu($individuId);
+            
+            // 2. Dapatkan keluarga_id dari individu
+            $individuModel = new IndividuModel();
+            $individu = $individuModel->find($individuId);
+            
+            if ($individu) {
+                $keluargaId = $individu['keluarga_id'];
+                
+                // 3. Delete individu itu sendiri
+                $individuModel->delete($individuId);
+                
+                // 4. Cek apakah masih ada individu lain dalam keluarga yang sama
+                $remainingIndividu = $individuModel->where('keluarga_id', $keluargaId)->countAllResults();
+                
+                if ($remainingIndividu == 0) {
+                    // Jika tidak ada individu lain, hapus semua data keluarga
+                    $this->deleteRelatedToKeluarga($keluargaId);
+                    
+                    $keluargaModel = new KeluargaModel();
+                    $keluargaModel->delete($keluargaId);
+                }
+            }
+            
+            $db->transComplete(); // Commit transaction
+            
+            if ($db->transStatus() === FALSE) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Gagal menghapus data'
+                ]);
+            }
+            
+            return $this->response->setJSON([
+                'success' => true,
+                'message' => 'Data berhasil dihapus'
+            ]);
+            
+        } catch (\Exception $e) {
+            $db->transRollback(); // Rollback transaction jika error
+            
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Error: ' . $e->getMessage()
+            ]);
+        }
+    }
+    
+    private function deleteRelatedToIndividu($individuId)
+    {
+        $pekerjaanModel = new PekerjaanModel();
+        $pendidikanModel = new PendidikanModel();
+        $kesehatanModel = new KesehatanModel();
+        $sumberPenghasilanModel = new SumberPenghasilanModel();
+        
+        // Dapatkan pekerjaan_id terkait individu
+        $pekerjaan = $pekerjaanModel->where('individu_id', $individuId)->first();
+        
+        if ($pekerjaan) {
+            // Hapus sumber penghasilan terkait pekerjaan
+            $sumberPenghasilanModel->where('pekerjaan_id', $pekerjaan['id'])->delete();
+            
+            // Hapus pekerjaan
+            $pekerjaanModel->where('individu_id', $individuId)->delete();
+        }
+        
+        // Hapus pendidikan
+        $pendidikanModel->where('individu_id', $individuId)->delete();
+        
+        // Hapus kesehatan
+        $kesehatanModel->where('individu_id', $individuId)->delete();
+    }
+    
+    private function deleteRelatedToKeluarga($keluargaId)
+    {
+        $permukimanModel = new PermukimanModel();
+        $aksesPendidikanModel = new AksesPendidikanModel();
+        $aksesKesehatanModel = new AksesKesehatanModel();
+        $aksesTenagaKesehatanModel = new AksesTenagaKesehatanModel();
+        $aksesTransportasiModel = new AksesTransportasiModel();
+        $programPemerintahModel = new ProgramPemerintahModel();
+        $lokasiModel = new LokasiModel();
+        $keluargaModel = new KeluargaModel();
+
+        
+        // Dapatkan permukiman_id terkait keluarga
+        $permukiman = $permukimanModel->where('keluarga_id', $keluargaId)->first();
+        
+        if ($permukiman) {
+            $permukimanId = $permukiman['id'];
+            
+            // Hapus data akses terkait permukiman
+            $aksesPendidikanModel->where('permukiman_id', $permukimanId)->delete();
+            $aksesKesehatanModel->where('permukiman_id', $permukimanId)->delete();
+            $aksesTenagaKesehatanModel->where('permukiman_id', $permukimanId)->delete();
+            $aksesTransportasiModel->where('permukiman_id', $permukimanId)->delete();
+            $programPemerintahModel->where('permukiman_id', $permukimanId)->delete();
+            
+            // Hapus permukiman
+            $permukimanModel->where('keluarga_id', $keluargaId)->delete();
+        }
+
+        $lokasi = $keluargaModel->where('keluarga_id', $keluargaId)->first();
+
+        if ($lokasi){
+            $lokasiId = $lokasi['lokasi_id'];
+            $lokasiModel->where('id', $lokasiId)->delete();   
+        }
+    }
+    
+    // Alternative: Hapus hanya individu dan relasinya (tanpa menghapus keluarga)
+    public function deleteIndividuOnly($individuId)
+    {
+        $db = \Config\Database::connect();
+        $db->transStart();
+        
+        try {
+            $this->deleteRelatedToIndividu($individuId);
+            
+            $individuModel = new IndividuModel();
+            $individuModel->delete($individuId);
+            
+            $db->transComplete();
+            
+            if ($db->transStatus() === FALSE) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Gagal menghapus individu'
+                ]);
+            }
+            
+            return $this->response->setJSON([
+                'success' => true,
+                'message' => 'Individu berhasil dihapus'
+            ]);
+            
+        } catch (\Exception $e) {
+            $db->transRollback();
+            
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Error: ' . $e->getMessage()
+            ]);
+        }
+    
+}
 
 
 }

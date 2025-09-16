@@ -4669,15 +4669,18 @@ th h6 {
                                     <div class="col-md-3">
                                         <h6 class="mb-25">P2. Deskripsi Lokasi</h6>
                                     </div>
+
+                                    <input type="hidden" name="lokasi_id" id="lokasi_id" value="">
+
                                     <div class="col-md-4">
                                         <!-- <label for="p205" class="form-label">RT/RW</label> -->
-                                        <input type="text" class="form-control" id="rt_rw" name="rt_rw"
+                                        <input type="text" class="form-control" id="rt_rw" name="lokasi_rt_rw"
                                             placeholder="RT/RW">
                                     </div>
                                     <div class="col-md-4">
                                         <!-- <label for="p206" class="form-label">Nama</label> -->
                                         <input type="text" class="form-control" id="nama_responden"
-                                            name="nama_responden" placeholder="Nama">
+                                            name="lokasi_nama_responden" placeholder="Nama">
                                     </div>
 
                                 </div>
@@ -4685,17 +4688,17 @@ th h6 {
                                     <div class="col-md-5">
                                         <!-- <label for="p207" class="form-label">Alamat</label> -->
                                         <input type="text" class="form-control" id="alamat_responden"
-                                            name="alamat_responden" placeholder="Alamat">
+                                            name="lokasi_alamat_responden" placeholder="Alamat">
                                     </div>
                                     <div class="col-md-3">
                                         <!-- <label for="p208" class="form-label">Nomor HP</label> -->
-                                        <input type="text" class="form-control" id="nomor_hp" name="nomor_hp"
+                                        <input type="text" class="form-control" id="nomor_hp" name="lokasi_nomor_hp"
                                             placeholder="Nomor HP">
                                     </div>
                                     <div class="col-md-4">
                                         <!-- <label for="p209" class="form-label">No Telp Kabel/Rumah</label> -->
                                         <input type="text" class="form-control" id="nomor_telepon_rumah"
-                                            name="nomor_telepon_rumah" placeholder="No Telp Kabel/Rumah">
+                                            name="lokasi_nomor_telepon_rumah" placeholder="No Telp Kabel/Rumah">
                                     </div>
                                 </div>
                             </div>
@@ -4710,13 +4713,15 @@ th h6 {
                         <h5 class="mt-3">P3. Deskripsi Keluarga</h5>
                         <div class="row mb-3">
                             <div class="col-md-4">
+                                <input type="hidden" name="keluarga_id" id="keluarga_id" value="">
+
                                 <label for="nomor_kk" class="form-label">Nomor KK</label>
-                                <input type="text" class="form-control" id="nomor_kk" name="nomor_kk">
+                                <input type="text" class="form-control" id="nomor_kk" name="keluarga_nomor_kk">
                             </div>
                             <div class="col-md-4">
                                 <label for="nik_kepala_keluarga" class="form-label">NIK Kepala Keluarga</label>
                                 <input type="text" class="form-control" id="nik_kepala_keluarga"
-                                    name="nik_kepala_keluarga">
+                                    name="keluarga_nik_kepala_keluarga">
                             </div>
                         </div>
                     </div>
@@ -4759,8 +4764,12 @@ th h6 {
                             <h5 class="mt-3">P4. Permukiman</h5>
                             <div class="row mb-3">
                                 <div class="col-md-4">
+
+                                    <input type="hidden" name="permukiman_id" id="permukiman_id" value="">
+
+
                                     <label for="tempat_tinggal" class="form-label">Tempat tinggal yang ditempati</label>
-                                    <select class="form-select" id="tempat_tinggal" name="tempat_tinggal">
+                                    <select class="form-select" id="tempat_tinggal" name="permukiman_tempat_tinggal">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Milik sendiri</option>
                                         <option value="2">Kontrak/Sewa</option>
@@ -4773,7 +4782,7 @@ th h6 {
 
                                 <div class="col-md-3">
                                     <label for="status_lahan" class="form-label">Status lahan tempat tinggal</label>
-                                    <select class="form-select" id="status_lahan" name="status_lahan">
+                                    <select class="form-select" id="status_lahan" name="permukiman_status_lahan">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Milik sendiri</option>
                                         <option value="2">Milik orang lain</option>
@@ -4787,11 +4796,11 @@ th h6 {
                                     <div class="row">
                                         <div class="col-md-6">
                                             <input type="number" class="form-control" id="luas_lantai"
-                                                name="luas_lantai" placeholder="Luas lantai (m2)">
+                                                name="permukiman_luas_lantai" placeholder="Luas lantai (m2)">
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" class="form-control" id="luas_lahan" name="luas_lahan"
-                                                placeholder="Luas lahan (m2)">
+                                            <input type="number" class="form-control" id="luas_lahan"
+                                                name="permukiman_luas_lahan" placeholder="Luas lahan (m2)">
                                         </div>
                                     </div>
                                 </div>
@@ -4802,7 +4811,7 @@ th h6 {
                                 <div class="col-md-3">
                                     <label for="jenis_lantai" class="form-label">Jenis lantai tempat tinggal
                                         terluas</label>
-                                    <select class="form-select" id="jenis_lantai" name="jenis_lantai">
+                                    <select class="form-select" id="jenis_lantai" name="permukiman_jenis_lantai">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Marmer/granit</option>
                                         <option value="2">Keramik</option>
@@ -4820,7 +4829,7 @@ th h6 {
                                 <!-- P405 -->
                                 <div class="col-md-3">
                                     <label for="jenis_dinding" class="form-label">Dinding sebagian besar rumah</label>
-                                    <select class="form-select" id="jenis_dinding" name="jenis_dinding">
+                                    <select class="form-select" id="jenis_dinding" name="permukiman_jenis_dinding">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Semen/beton/kayu berkualitas tinggi</option>
                                         <option value="2">Kayu berkualitas rendah/bambu</option>
@@ -4831,7 +4840,7 @@ th h6 {
                                 <!-- P406 -->
                                 <div class="col-md-3">
                                     <label for="jendela" class="form-label">Jendela</label>
-                                    <select class="form-select" id="jendela" name="jendela">
+                                    <select class="form-select" id="jendela" name="permukiman_jendela">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Ada, berfungsi</option>
                                         <option value="2">Ada, tidak berfungsi</option>
@@ -4842,7 +4851,7 @@ th h6 {
                                 <!-- P407 -->
                                 <div class="col-md-3">
                                     <label for="atap" class="form-label">Atap</label>
-                                    <select class="form-select" id="atap" name="atap">
+                                    <select class="form-select" id="atap" name="permukiman_atap">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Genteng</option>
                                         <option value="2">Kayu/Jerami</option>
@@ -4855,7 +4864,7 @@ th h6 {
                             <div class="row mb-3">
                                 <div class="col-md-3">
                                     <label for="penerangan" class="form-label">Penerangan rumah</label>
-                                    <select class="form-select" id="penerangan" name="penerangan">
+                                    <select class="form-select" id="penerangan" name="permukiman_penerangan">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Listrik PLN</option>
                                         <option value="2">Listrik non PLN</option>
@@ -4868,7 +4877,7 @@ th h6 {
                                 <!-- P409 -->
                                 <div class="col-md-3">
                                     <label for="energi_masak" class="form-label">Energi untuk memasak</label>
-                                    <select class="form-select" id="energi_masak" name="energi_masak">
+                                    <select class="form-select" id="energi_masak" name="permukiman_energi_masak">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Gas kota / LPG / Biogas</option>
                                         <option value="2">Minyak tanah / Batu bara</option>
@@ -4882,7 +4891,8 @@ th h6 {
                                     <label for="sumber_kayu_bakar" class="form-label">Jika menggunakan kayu bakar,
                                         sumber
                                         kayu</label>
-                                    <select class="form-select" id="sumber_kayu_bakar" name="sumber_kayu_bakar">
+                                    <select class="form-select" id="sumber_kayu_bakar"
+                                        name="permukiman_sumber_kayu_bakar">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Pembelian</option>
                                         <option value="2">Diambil dari hutan</option>
@@ -4896,7 +4906,8 @@ th h6 {
                                 <!-- P411 -->
                                 <div class="col-md-3">
                                     <label for="pembuangan_sampah" class="form-label">Tempat pembuangan sampah</label>
-                                    <select class="form-select" id="pembuangan_sampah" name="pembuangan_sampah">
+                                    <select class="form-select" id="pembuangan_sampah"
+                                        name="permukiman_pembuangan_sampah">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Tidak ada</option>
                                         <option value="2">Di kebun/sungai/drainase</option>
@@ -4910,7 +4921,7 @@ th h6 {
                                 <!-- P412 -->
                                 <div class="col-md-3">
                                     <label for="fasilitas_mck" class="form-label">Fasilitas MCK</label>
-                                    <select class="form-select" id="fasilitas_mck" name="fasilitas_mck">
+                                    <select class="form-select" id="fasilitas_mck" name="permukiman_fasilitas_mck">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Sendiri</option>
                                         <option value="2">Berkelompok/tetangga</option>
@@ -4923,7 +4934,8 @@ th h6 {
                                 <div class="col-md-3">
                                     <label for="sumber_air_mandi" class="form-label">Sumber air mandi terbanyak
                                         dari</label>
-                                    <select class="form-select" id="sumber_air_mandi" name="sumber_air_mandi">
+                                    <select class="form-select" id="sumber_air_mandi"
+                                        name="permukiman_sumber_air_mandi">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Ledeng/perpipaan berbayar/air isi ulang/kemasan</option>
                                         <option value="2">Perpipaan</option>
@@ -4937,7 +4949,7 @@ th h6 {
                                 <!-- P414 -->
                                 <div class="col-md-3">
                                     <label for="fasilitas_bab" class="form-label">Fasilitas buang air besar</label>
-                                    <select class="form-select" id="fasilitas_bab" name="fasilitas_bab">
+                                    <select class="form-select" id="fasilitas_bab" name="permukiman_fasilitas_bab">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Jamban sendiri</option>
                                         <option value="2">Jamban bersama/tetangga</option>
@@ -4951,7 +4963,8 @@ th h6 {
                                 <div class="col-md-5">
                                     <label for="sumber_air_minum" class="form-label">Sumber air minum terbanyak
                                         dari</label>
-                                    <select class="form-select" id="sumber_air_minum" name="sumber_air_minum">
+                                    <select class="form-select" id="sumber_air_minum"
+                                        name="permukiman_sumber_air_minum">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Ledeng/perpipaan berbayar/air isi ulang/kemasan</option>
                                         <option value="2">Mata air / Perpipaan / Sumur</option>
@@ -4966,7 +4979,7 @@ th h6 {
                                     <label for="pembuangan_limbah_cair" class="form-label">Tempat pembuangan limbah
                                         cair</label>
                                     <select class="form-select" id="pembuangan_limbah_cair"
-                                        name="pembuangan_limbah_cair">
+                                        name="permukiman_pembuangan_limbah_cair">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Tangki/instalasi pengelolaan limbah</option>
                                         <option value="2">Sawah/kolam/sungai/drainase/laut</option>
@@ -4981,7 +4994,7 @@ th h6 {
                                 <div class="col-md-5">
                                     <label for="bawah_sutet" class="form-label">Rumah berada di bawah
                                         SUTET/SUTT/SUTTAS</label>
-                                    <select class="form-select" id="bawah_sutet" name="bawah_sutet">
+                                    <select class="form-select" id="bawah_sutet" name="permukiman_bawah_sutet">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Ya</option>
                                         <option value="2">Tidak</option>
@@ -4991,7 +5004,7 @@ th h6 {
                                 <!-- P418 -->
                                 <div class="col-md-5">
                                     <label for="bantaran_sungai" class="form-label">Rumah di bantaran sungai</label>
-                                    <select class="form-select" id="bantaran_sungai" name="bantaran_sungai">
+                                    <select class="form-select" id="bantaran_sungai" name="permukiman_bantaran_sungai">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Ya</option>
                                         <option value="2">Tidak</option>
@@ -5003,7 +5016,7 @@ th h6 {
                                 <!-- P419 -->
                                 <div class="col-md-5">
                                     <label for="lereng_bukit" class="form-label">Rumah di lereng bukit/gunung</label>
-                                    <select class="form-select" id="lereng_bukit" name="lereng_bukit">
+                                    <select class="form-select" id="lereng_bukit" name="permukiman_lereng_bukit">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Ya</option>
                                         <option value="2">Tidak</option>
@@ -5014,7 +5027,7 @@ th h6 {
                                 <div class="col-md-5">
                                     <label for="kondisi_rumah" class="form-label">Secara keseluruhan kondisi
                                         rumah</label>
-                                    <select class="form-select" id="kondisi_rumah" name="kondisi_rumah">
+                                    <select class="form-select" id="kondisi_rumah" name="permukiman_kondisi_rumah">
                                         <option value="">-- Pilih --</option>
                                         <option value="1">Kumuh</option>
                                         <option value="2">Tidak kumuh</option>
@@ -5679,7 +5692,7 @@ th h6 {
                                                                 </td>
                                                                 <td>
                                                                     <select class="form-control"
-                                                                        name="transportasi[0][jenis]">
+                                                                        name="transportasi[0][jenis_transportasi]">
                                                                         <option value="">-- pilih --</option>
                                                                         <option value="1">Darat</option>
                                                                         <option value="2">Air</option>
@@ -5688,16 +5701,16 @@ th h6 {
                                                                 </td>
                                                                 <td>
                                                                     <select class="form-control"
-                                                                        name="transportasi[0][umum]">
+                                                                        name="transportasi[0][transportasi_umum]">
                                                                         <option value="">-- pilih --</option>
                                                                         <option value="1">Ya</option>
                                                                         <option value="2">Tidak</option>
                                                                     </select>
                                                                 </td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="transportasi[0][waktu]"></td>
+                                                                        name="transportasi[0][waktu_tempuh_jam]"></td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="transportasi[0][biaya]"></td>
+                                                                        name="transportasi[0][biaya_perjalanan]"></td>
                                                                 <td>
                                                                     <select class="form-control"
                                                                         name="transportasi[0][kemudahan]">
@@ -5719,7 +5732,7 @@ th h6 {
                                                                 </td>
                                                                 <td>
                                                                     <select class="form-control"
-                                                                        name="transportasi[1][jenis]">
+                                                                        name="transportasi[1][jenis_transportasi]">
                                                                         <option value="">-- pilih --</option>
                                                                         <option value="1">Darat</option>
                                                                         <option value="2">Air</option>
@@ -5728,16 +5741,16 @@ th h6 {
                                                                 </td>
                                                                 <td>
                                                                     <select class="form-control"
-                                                                        name="transportasi[1][umum]">
+                                                                        name="transportasi[1][transportasi_umum]">
                                                                         <option value="">-- pilih --</option>
                                                                         <option value="1">Ya</option>
                                                                         <option value="2">Tidak</option>
                                                                     </select>
                                                                 </td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="transportasi[1][waktu]"></td>
+                                                                        name="transportasi[1][waktu_tempuh_jam]"></td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="transportasi[1][biaya]"></td>
+                                                                        name="transportasi[1][biaya_perjalanan]"></td>
                                                                 <td>
                                                                     <select class="form-control"
                                                                         name="transportasi[1][kemudahan]">
@@ -5759,7 +5772,7 @@ th h6 {
                                                                 </td>
                                                                 <td>
                                                                     <select class="form-control"
-                                                                        name="transportasi[2][jenis]">
+                                                                        name="transportasi[2][jenis_transportasi]">
                                                                         <option value="">-- pilih --</option>
                                                                         <option value="1">Darat</option>
                                                                         <option value="2">Air</option>
@@ -5768,16 +5781,16 @@ th h6 {
                                                                 </td>
                                                                 <td>
                                                                     <select class="form-control"
-                                                                        name="transportasi[2][umum]">
+                                                                        name="transportasi[2][transportasi_umum]">
                                                                         <option value="">-- pilih --</option>
                                                                         <option value="1">Ya</option>
                                                                         <option value="2">Tidak</option>
                                                                     </select>
                                                                 </td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="transportasi[2][waktu]"></td>
+                                                                        name="transportasi[2][waktu_tempuh_jam]"></td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="transportasi[2][biaya]"></td>
+                                                                        name="transportasi[2][biaya_perjalanan]"></td>
                                                                 <td>
                                                                     <select class="form-control"
                                                                         name="transportasi[2][kemudahan]">
@@ -5799,7 +5812,7 @@ th h6 {
                                                                 </td>
                                                                 <td>
                                                                     <select class="form-control"
-                                                                        name="transportasi[3][jenis]">
+                                                                        name="transportasi[3][jenis_transportasi]">
                                                                         <option value="">-- pilih --</option>
                                                                         <option value="1">Darat</option>
                                                                         <option value="2">Air</option>
@@ -5808,16 +5821,16 @@ th h6 {
                                                                 </td>
                                                                 <td>
                                                                     <select class="form-control"
-                                                                        name="transportasi[3][umum]">
+                                                                        name="transportasi[3][transportasi_umum]">
                                                                         <option value="">-- pilih --</option>
                                                                         <option value="1">Ya</option>
                                                                         <option value="2">Tidak</option>
                                                                     </select>
                                                                 </td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="transportasi[3][waktu]"></td>
+                                                                        name="transportasi[3][waktu_tempuh_jam]"></td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="transportasi[3][biaya]"></td>
+                                                                        name="transportasi[3][biaya_perjalanan]"></td>
                                                                 <td>
                                                                     <select class="form-control"
                                                                         name="transportasi[3][kemudahan]">
@@ -5839,7 +5852,7 @@ th h6 {
                                                                 </td>
                                                                 <td>
                                                                     <select class="form-control"
-                                                                        name="transportasi[4][jenis]">
+                                                                        name="transportasi[4][jenis_transportasi]">
                                                                         <option value="">-- pilih --</option>
                                                                         <option value="1">Darat</option>
                                                                         <option value="2">Air</option>
@@ -5848,16 +5861,16 @@ th h6 {
                                                                 </td>
                                                                 <td>
                                                                     <select class="form-control"
-                                                                        name="transportasi[4][umum]">
+                                                                        name="transportasi[4][transportasi_umum]">
                                                                         <option value="">-- pilih --</option>
                                                                         <option value="1">Ya</option>
                                                                         <option value="2">Tidak</option>
                                                                     </select>
                                                                 </td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="transportasi[4][waktu]"></td>
+                                                                        name="transportasi[4][waktu_tempuh_jam]"></td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="transportasi[4][biaya]"></td>
+                                                                        name="transportasi[4][biaya_perjalanan]"></td>
                                                                 <td>
                                                                     <select class="form-control"
                                                                         name="transportasi[4][kemudahan]">
@@ -5879,7 +5892,7 @@ th h6 {
                                                                 </td>
                                                                 <td>
                                                                     <select class="form-control"
-                                                                        name="transportasi[5][jenis]">
+                                                                        name="transportasi[5][jenis_transportasi]">
                                                                         <option value="">-- pilih --</option>
                                                                         <option value="1">Darat</option>
                                                                         <option value="2">Air</option>
@@ -5888,16 +5901,16 @@ th h6 {
                                                                 </td>
                                                                 <td>
                                                                     <select class="form-control"
-                                                                        name="transportasi[5][umum]">
+                                                                        name="transportasi[5][transportasi_umum]">
                                                                         <option value="">-- pilih --</option>
                                                                         <option value="1">Ya</option>
                                                                         <option value="2">Tidak</option>
                                                                     </select>
                                                                 </td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="transportasi[5][waktu]"></td>
+                                                                        name="transportasi[5][waktu_tempuh_jam]"></td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="transportasi[5][biaya]"></td>
+                                                                        name="transportasi[5][biaya_perjalanan]"></td>
                                                                 <td>
                                                                     <select class="form-control"
                                                                         name="transportasi[5][kemudahan]">
@@ -5947,9 +5960,10 @@ th h6 {
                                                                         value="Dokter spesialis">
                                                                 </td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="tenaga_kesehatan[0][jarak]"></td>
+                                                                        name="tenaga_kesehatan[0][jarak_km]"></td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="tenaga_kesehatan[0][waktu]"></td>
+                                                                        name="tenaga_kesehatan[0][waktu_tempuh_jam]">
+                                                                </td>
                                                                 <td>
                                                                     <select class="form-control"
                                                                         name="tenaga_kesehatan[0][kemudahan]">
@@ -5968,9 +5982,10 @@ th h6 {
                                                                         value="Dokter umum">
                                                                 </td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="tenaga_kesehatan[1][jarak]"></td>
+                                                                        name="tenaga_kesehatan[1][jarak_km]"></td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="tenaga_kesehatan[1][waktu]"></td>
+                                                                        name="tenaga_kesehatan[1][waktu_tempuh_jam]">
+                                                                </td>
                                                                 <td>
                                                                     <select class="form-control"
                                                                         name="tenaga_kesehatan[1][kemudahan]">
@@ -5989,9 +6004,10 @@ th h6 {
                                                                         value="Bidan">
                                                                 </td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="tenaga_kesehatan[2][jarak]"></td>
+                                                                        name="tenaga_kesehatan[2][jarak_km]"></td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="tenaga_kesehatan[2][waktu]"></td>
+                                                                        name="tenaga_kesehatan[2][waktu_tempuh_jam]">
+                                                                </td>
                                                                 <td>
                                                                     <select class="form-control"
                                                                         name="tenaga_kesehatan[2][kemudahan]">
@@ -6010,9 +6026,10 @@ th h6 {
                                                                         value="Tenaga kesehatan lain">
                                                                 </td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="tenaga_kesehatan[3][jarak]"></td>
+                                                                        name="tenaga_kesehatan[3][jarak_km]"></td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="tenaga_kesehatan[3][waktu]"></td>
+                                                                        name="tenaga_kesehatan[3][waktu_tempuh_jam]">
+                                                                </td>
                                                                 <td>
                                                                     <select class="form-control"
                                                                         name="tenaga_kesehatan[3][kemudahan]">
@@ -6031,9 +6048,10 @@ th h6 {
                                                                         value="Dukun">
                                                                 </td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="tenaga_kesehatan[4][jarak]"></td>
+                                                                        name="tenaga_kesehatan[4][jarak_km]"></td>
                                                                 <td><input type="number" class="form-control"
-                                                                        name="tenaga_kesehatan[4][waktu]"></td>
+                                                                        name="tenaga_kesehatan[4][waktu_tempuh_jam]">
+                                                                </td>
                                                                 <td>
                                                                     <select class="form-control"
                                                                         name="tenaga_kesehatan[4][kemudahan]">
@@ -6065,16 +6083,23 @@ th h6 {
                                                     </thead>
                                                     <tbody>
                                                         <tr>
+                                                            <input type="hidden"
+                                                                name="program_pemerintah[permukiman_id]"
+                                                                id="program_pemerintah_permukiman_id" value="">
+                                                            <input type="hidden" name="program_pemerintah[id]"
+                                                                id="program_pemerintah_id" value="">
                                                             <td>1. BLT Dana Desa</td>
                                                             <td>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="blt_dana_desa" value="1">
+                                                                        name="program_pemerintah[blt_dana_desa]"
+                                                                        value="1">
                                                                     <label class="form-check-label">Ya</label>
                                                                 </div>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="blt_dana_desa" value="0">
+                                                                        name="program_pemerintah[blt_dana_desa]"
+                                                                        value="0">
                                                                     <label class="form-check-label">Tidak</label>
                                                                 </div>
                                                             </td>
@@ -6084,12 +6109,12 @@ th h6 {
                                                             <td>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="pkh" value="1">
+                                                                        name="program_pemerintah[pkh]" value="1">
                                                                     <label class="form-check-label">Ya</label>
                                                                 </div>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="pkh" value="0">
+                                                                        name="program_pemerintah[pkh]" value="0">
                                                                     <label class="form-check-label">Tidak</label>
                                                                 </div>
                                                             </td>
@@ -6099,12 +6124,12 @@ th h6 {
                                                             <td>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="bst" value="1">
+                                                                        name="program_pemerintah[bst]" value="1">
                                                                     <label class="form-check-label">Ya</label>
                                                                 </div>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="bst" value="0">
+                                                                        name="program_pemerintah[bst]" value="0">
                                                                     <label class="form-check-label">Tidak</label>
                                                                 </div>
                                                             </td>
@@ -6114,12 +6139,12 @@ th h6 {
                                                             <td>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="banpres" value="1">
+                                                                        name="program_pemerintah[banpres]" value="1">
                                                                     <label class="form-check-label">Ya</label>
                                                                 </div>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="banpres" value="0">
+                                                                        name="program_pemerintah[banpres]" value="0">
                                                                     <label class="form-check-label">Tidak</label>
                                                                 </div>
                                                             </td>
@@ -6129,12 +6154,14 @@ th h6 {
                                                             <td>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="bantuan_umkm" value="1">
+                                                                        name="program_pemerintah[bantuan_umkm]"
+                                                                        value="1">
                                                                     <label class="form-check-label">Ya</label>
                                                                 </div>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="bantuan_umkm" value="0">
+                                                                        name="program_pemerintah[bantuan_umkm]"
+                                                                        value="0">
                                                                     <label class="form-check-label">Tidak</label>
                                                                 </div>
                                                             </td>
@@ -6144,12 +6171,14 @@ th h6 {
                                                             <td>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="bantuan_pekerja" value="1">
+                                                                        name="program_pemerintah[bantuan_pekerja]"
+                                                                        value="1">
                                                                     <label class="form-check-label">Ya</label>
                                                                 </div>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="bantuan_pekerja" value="0">
+                                                                        name="program_pemerintah[bantuan_pekerja]"
+                                                                        value="0">
                                                                     <label class="form-check-label">Tidak</label>
                                                                 </div>
                                                             </td>
@@ -6159,12 +6188,14 @@ th h6 {
                                                             <td>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="bantuan_pendidikan" value="1">
+                                                                        name="program_pemerintah[bantuan_pendidikan]"
+                                                                        value="1">
                                                                     <label class="form-check-label">Ya</label>
                                                                 </div>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="bantuan_pendidikan" value="2">
+                                                                        name="program_pemerintah[bantuan_pendidikan]"
+                                                                        value="0">
                                                                     <label class="form-check-label">Tidak</label>
                                                                 </div>
                                                             </td>
@@ -6174,12 +6205,12 @@ th h6 {
                                                             <td>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="lainnya" value="1">
+                                                                        name="program_pemerintah[lainnya]" value="1">
                                                                     <label class="form-check-label">Ya</label>
                                                                 </div>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="lainnya" value="0">
+                                                                        name="program_pemerintah[lainnya]" value="0">
                                                                     <label class="form-check-label">Tidak</label>
                                                                 </div>
                                                             </td>
@@ -6225,25 +6256,25 @@ th h6 {
                                     <!-- P101 - P116 DATA PRIBADI -->
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control mb-3" id="nomor_kk" name="nomor_kk"
-                                                placeholder="P101. Nomor Kartu Keluarga">
+                                            <input type="hidden" name="individu_id" id="individu_id" value="">
+                                            <input type="text" class="form-control mb-3" id="nomor_kk"
+                                                name="individu_nomor_kk" placeholder="P101. Nomor Kartu Keluarga">
                                         </div>
                                         <div class="col-md-4">
-                                            <!-- <input type="text" class="form-control mb-3" id="nik" name="nik"
-                                                placeholder="P102. NIK"> -->
-                                            <input type="text" class="form-control mb-3" id="nik" name="nik"
+                                            <input type="text" class="form-control mb-3" id="nik" name="individu_nik"
                                                 placeholder="P102. NIK" pattern="\d{16}"
                                                 title="NIK harus 16 digit angka" required>
                                         </div>
                                         <div class="col-md-4">
                                             <input type="text" class="form-control mb-3" id="nama_individu"
-                                                name="nama_individu" placeholder="P103. Nama">
+                                                name="individu_nama" placeholder="P103. Nama">
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <select class="form-control mb-3" id="jenis_kelamin" name="jenis_kelamin">
+                                            <select class="form-control mb-3" id="jenis_kelamin"
+                                                name="individu_jenis_kelamin">
                                                 <option value="">P104. Jenis Kelamin</option>
                                                 <option value="1">Laki-laki</option>
                                                 <option value="2">Perempuan</option>
@@ -6251,18 +6282,18 @@ th h6 {
                                         </div>
                                         <div class="col-md-4">
                                             <input type="text" class="form-control mb-3" id="tempat_lahir"
-                                                name="tempat_lahir" placeholder="P105. Tempat Lahir">
+                                                name="individu_tempat_lahir" placeholder="P105. Tempat Lahir">
                                         </div>
                                         <div class="col-md-4">
                                             <input type="date" class="form-control mb-3" id="tanggal_lahir"
-                                                name="tanggal_lahir" placeholder="P106. Tanggal Lahir">
+                                                name="individu_tanggal_lahir" placeholder="P106. Tanggal Lahir">
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-md-4">
                                             <select class="form-control mb-3" id="status_pernikahan"
-                                                name="status_pernikahan">
+                                                name="individu_status_pernikahan">
                                                 <option value="">P107. Status Pernikahan</option>
                                                 <option value="1">Kawin</option>
                                                 <option value="2">Tidak Kawin</option>
@@ -6270,7 +6301,7 @@ th h6 {
                                             </select>
                                         </div>
                                         <div class="col-md-4">
-                                            <select class="form-control mb-3" id="agama" name="agama">
+                                            <select class="form-control mb-3" id="agama" name="individu_agama">
                                                 <option value="">P108. Agama</option>
                                                 <option value="1">Islam</option>
                                                 <option value="2">Kristen</option>
@@ -6280,47 +6311,48 @@ th h6 {
                                         </div>
                                         <div class="col-md-4">
                                             <input type="text" class="form-control mb-3" id="suku_bangsa"
-                                                name="suku_bangsa" placeholder="P109. Suku Bangsa">
+                                                name="individu_suku_bangsa" placeholder="P109. Suku Bangsa">
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <select class="form-control mb-3" id="warga_negara" name="warga_negara">
+                                            <select class="form-control mb-3" id="warga_negara"
+                                                name="individu_warga_negara">
                                                 <option value="">P110. Warganegara</option>
                                                 <option value="1">WNI</option>
                                                 <option value="2">WNA</option>
                                             </select>
                                         </div>
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control mb-3" id="nomor_hp" name="nomor_hp"
-                                                placeholder="P111. Nomor HP">
+                                            <input type="text" class="form-control mb-3" id="nomor_hp"
+                                                name="individu_nomor_hp" placeholder="P111. Nomor HP">
                                         </div>
                                         <div class="col-md-4">
                                             <input type="text" class="form-control mb-3" id="nomor_whatsapp"
-                                                name="nomor_whatsapp" placeholder="P112. Nomor Whatsapp">
+                                                name="individu_nomor_whatsapp" placeholder="P112. Nomor Whatsapp">
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <input type="email" class="form-control mb-3" id="email" name="email"
-                                                placeholder="P113. Email Pribadi">
+                                            <input type="email" class="form-control mb-3" id="email"
+                                                name="individu_email" placeholder="P113. Email Pribadi">
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" class="form-control mb-3" id="facebook" name="facebook"
-                                                placeholder="P114. Facebook Pribadi">
+                                            <input type="text" class="form-control mb-3" id="facebook"
+                                                name="individu_facebook" placeholder="P114. Facebook Pribadi">
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <input type="text" class="form-control mb-3" id="twitter" name="twitter"
-                                                placeholder="P115. Twitter Pribadi">
+                                            <input type="text" class="form-control mb-3" id="twitter"
+                                                name="individu_twitter" placeholder="P115. Twitter Pribadi">
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" class="form-control mb-3" id="instagram" name="instagram"
-                                                placeholder="P116. Instagram Pribadi">
+                                            <input type="text" class="form-control mb-3" id="instagram"
+                                                name="individu_instagram" placeholder="P116. Instagram Pribadi">
                                         </div>
                                     </div>
                                 </div>
@@ -8313,15 +8345,20 @@ th h6 {
                                                 <tbody>
                                                     <tr>
                                                         <td>1. Muntaber / diare</td>
+
+                                                        <input type="hidden" name="kesehatan_individu"
+                                                            id="kesehatan_individu" value="">
+                                                        <input type="hidden" name="kesehatan_id" id="kesehatan_id"
+                                                            value="">
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="muntaber_diare" value="1">
+                                                                    name="kesehatan_muntaber_diare" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="muntaber_diare" value="0">
+                                                                    name="kesehatan_muntaber_diare" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8331,12 +8368,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="demam_berdarah" value="1">
+                                                                    name="kesehatan_demam_berdarah" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="demam_berdarah" value="0">
+                                                                    name="kesehatan_demam_berdarah" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8346,12 +8383,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="campak" value="1">
+                                                                    name="kesehatan_campak" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="campak" value="0">
+                                                                    name="kesehatan_campak" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8361,12 +8398,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="malaria" value="1">
+                                                                    name="kesehatan_malaria" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="malaria" value="0">
+                                                                    name="kesehatan_malaria" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8376,12 +8413,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="flu_burung_sars" value="1">
+                                                                    name="kesehatan_flu_burung_sars" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="flu_burung_sars" value="0">
+                                                                    name="kesehatan_flu_burung_sars" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8391,12 +8428,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="covid_19" value="1">
+                                                                    name="kesehatan_covid_19" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="covid_19" value="0">
+                                                                    name="kesehatan_covid_19" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8406,12 +8443,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="hepatitis_b" value="1">
+                                                                    name="kesehatan_hepatitis_b" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="hepatitis_b" value="0">
+                                                                    name="kesehatan_hepatitis_b" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8421,12 +8458,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="hepatitis_e" value="1">
+                                                                    name="kesehatan_hepatitis_e" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="hepatitis_e" value="0">
+                                                                    name="kesehatan_hepatitis_e" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8436,12 +8473,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="difteri" value="1">
+                                                                    name="kesehatan_difteri" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="difteri" value="0">
+                                                                    name="kesehatan_difteri" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8451,12 +8488,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="chikungunya" value="1">
+                                                                    name="kesehatan_chikungunya" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="chikungunya" value="0">
+                                                                    name="kesehatan_chikungunya" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8466,12 +8503,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="leptospirosis" value="1">
+                                                                    name="kesehatan_leptospirosis" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="leptospirosis" value="0">
+                                                                    name="kesehatan_leptospirosis" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8481,12 +8518,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="kolera" value="1">
+                                                                    name="kesehatan_kolera" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="kolera" value="0">
+                                                                    name="kesehatan_kolera" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8496,12 +8533,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="gizi_buruk" value="1">
+                                                                    name="kesehatan_gizi_buruk" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="gizi_buruk" value="0">
+                                                                    name="kesehatan_gizi_buruk" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8511,12 +8548,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="jantung" value="1">
+                                                                    name="kesehatan_jantung" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="jantung" value="0">
+                                                                    name="kesehatan_jantung" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8526,12 +8563,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="tbc_paru" value="1">
+                                                                    name="kesehatan_tbc_paru" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="tbc_paru" value="0">
+                                                                    name="kesehatan_tbc_paru" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8541,12 +8578,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="kanker" value="1">
+                                                                    name="kesehatan_kanker" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="kanker" value="0">
+                                                                    name="kesehatan_kanker" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8556,12 +8593,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="diabetes" value="1">
+                                                                    name="kesehatan_diabetes" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="diabetes" value="0">
+                                                                    name="kesehatan_diabetes" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8571,12 +8608,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="lumpuh" value="1">
+                                                                    name="kesehatan_lumpuh" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="lumpuh" value="0">
+                                                                    name="kesehatan_lumpuh" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8586,12 +8623,12 @@ th h6 {
                                                         <td>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="lainnya_penyakit" value="1">
+                                                                    name="kesehatan_lainnya_penyakit" value="1">
                                                                 <label class="form-check-label">Ya</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="lainnya_penyakit" value="0">
+                                                                    name="kesehatan_lainnya_penyakit" value="0">
                                                                 <label class="form-check-label">Tidak</label>
                                                             </div>
                                                         </td>
@@ -8619,85 +8656,91 @@ th h6 {
                                                     <tr>
                                                         <td>1. Rumah sakit</td>
                                                         <td><input type="number" class="form-control"
-                                                                name="rumah_sakit">
+                                                                name="kesehatan_rumah_sakit">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>2. Rumah sakit bersalin</td>
                                                         <td><input type="number" class="form-control"
-                                                                name="rumah_sakit_bersalin">
+                                                                name="kesehatan_rumah_sakit_bersalin">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>3. Puskesmas dengan rawat inap</td>
                                                         <td><input type="number" class="form-control"
-                                                                name="puskesmas_rawat_inap"></td>
+                                                                name="kesehatan_puskesmas_rawat_inap"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>4. Puskesmas tanpa rawat inap</td>
                                                         <td><input type="number" class="form-control"
-                                                                name="puskesmas_tanpa_rawat_inap"></td>
+                                                                name="kesehatan_puskesmas_tanpa_rawat_inap"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>5. Puskesmas pembantu</td>
                                                         <td><input type="number" class="form-control"
-                                                                name="puskesmas_pembantu">
+                                                                name="kesehatan_puskesmas_pembantu">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>6. Poliklinik / balai pengobatan</td>
-                                                        <td><input type="number" class="form-control" name="poliklinik">
+                                                        <td><input type="number" class="form-control"
+                                                                name="kesehatan_poliklinik">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>7. Tempat praktik dokter</td>
                                                         <td><input type="number" class="form-control"
-                                                                name="praktik_dokter"></td>
+                                                                name="kesehatan_praktik_dokter"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>8. Rumah bersalin</td>
                                                         <td><input type="number" class="form-control"
-                                                                name="rumah_bersalin"></td>
+                                                                name="kesehatan_rumah_bersalin"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>9. Tempat praktik bidan</td>
                                                         <td><input type="number" class="form-control"
-                                                                name="praktik_bidan"></td>
+                                                                name="kesehatan_praktik_bidan"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>10. Poskesdes</td>
-                                                        <td><input type="number" class="form-control" name="poskesdes">
+                                                        <td><input type="number" class="form-control"
+                                                                name="kesehatan_poskesdes">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>11. Polindes</td>
-                                                        <td><input type="number" class="form-control" name="polindes">
+                                                        <td><input type="number" class="form-control"
+                                                                name="kesehatan_polindes">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>12. Apotik</td>
-                                                        <td><input type="number" class="form-control" name="apotik">
+                                                        <td><input type="number" class="form-control"
+                                                                name="kesehatan_apotik">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>13. Toko khusus obat / jamu</td>
                                                         <td><input type="number" class="form-control"
-                                                                name="toko_obat_jamu"></td>
+                                                                name="kesehatan_toko_obat_jamu"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>14. Posyandu</td>
-                                                        <td><input type="number" class="form-control" name="posyandu">
+                                                        <td><input type="number" class="form-control"
+                                                                name="kesehatan_posyandu">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>15. Posbindu</td>
-                                                        <td><input type="number" class="form-control" name="posbindu">
+                                                        <td><input type="number" class="form-control"
+                                                                name="kesehatan_posbindu">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>16. Tempat praktik dukun bayi / bersalin / paraji</td>
                                                         <td><input type="number" class="form-control"
-                                                                name="praktik_dukun">
+                                                                name="kesehatan_praktik_dukun">
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -8726,12 +8769,12 @@ th h6 {
                                                     <td>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="jaminan_sosial_kesehatan" value="1">
+                                                                name="kesehatan_jaminan_sosial_kesehatan" value="1">
                                                             <label class="form-check-label">Peserta</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="jaminan_sosial_kesehatan" value="0">
+                                                                name="kesehatan_jaminan_sosial_kesehatan" value="0">
                                                             <label class="form-check-label">Bukan Peserta</label>
                                                         </div>
                                                     </td>
@@ -8743,12 +8786,12 @@ th h6 {
                                                     <td>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="tunanetra" value="1">
+                                                                name="kesehatan_tunanetra" value="1">
                                                             <label class="form-check-label">Ya</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="tunanetra" value="0">
+                                                                name="kesehatan_tunanetra" value="0">
                                                             <label class="form-check-label">Tidak</label>
                                                         </div>
                                                     </td>
@@ -8758,12 +8801,12 @@ th h6 {
                                                     <td>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="tunarungu" value="1">
+                                                                name="kesehatan_tunarungu" value="1">
                                                             <label class="form-check-label">Ya</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="tunarungu" value="0">
+                                                                name="kesehatan_tunarungu" value="0">
                                                             <label class="form-check-label">Tidak</label>
                                                         </div>
                                                     </td>
@@ -8773,12 +8816,12 @@ th h6 {
                                                     <td>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="tunawicara" value="1">
+                                                                name="kesehatan_tunawicara" value="1">
                                                             <label class="form-check-label">Ya</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="tunawicara" value="0">
+                                                                name="kesehatan_tunawicara" value="0">
                                                             <label class="form-check-label">Tidak</label>
                                                         </div>
                                                     </td>
@@ -8788,12 +8831,12 @@ th h6 {
                                                     <td>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="tunarungu_wicara" value="1">
+                                                                name="kesehatan_tunarungu_wicara" value="1">
                                                             <label class="form-check-label">Ya</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="tunarungu_wicara" value="0">
+                                                                name="kesehatan_tunarungu_wicara" value="0">
                                                             <label class="form-check-label">Tidak</label>
                                                         </div>
                                                     </td>
@@ -8803,12 +8846,12 @@ th h6 {
                                                     <td>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="tunadaksa" value="1">
+                                                                name="kesehatan_tunadaksa" value="1">
                                                             <label class="form-check-label">Ya</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="tunadaksa" value="0">
+                                                                name="kesehatan_tunadaksa" value="0">
                                                             <label class="form-check-label">Tidak</label>
                                                         </div>
                                                     </td>
@@ -8818,12 +8861,12 @@ th h6 {
                                                     <td>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="tunagrahita" value="1">
+                                                                name="kesehatan_tunagrahita" value="1">
                                                             <label class="form-check-label">Ya</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="tunagrahita" value="0">
+                                                                name="kesehatan_tunagrahita" value="0">
                                                             <label class="form-check-label">Tidak</label>
                                                         </div>
                                                     </td>
@@ -8833,12 +8876,12 @@ th h6 {
                                                     <td>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="tunalaras" value="1">
+                                                                name="kesehatan_tunalaras" value="1">
                                                             <label class="form-check-label">Ya</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="tunalaras" value="0">
+                                                                name="kesehatan_tunalaras" value="0">
                                                             <label class="form-check-label">Tidak</label>
                                                         </div>
                                                     </td>
@@ -8848,12 +8891,12 @@ th h6 {
                                                     <td>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="cacat_kusta" value="1">
+                                                                name="kesehatan_cacat_kusta" value="1">
                                                             <label class="form-check-label">Ya</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="cacat_kusta" value="0">
+                                                                name="kesehatan_cacat_kusta" value="0">
                                                             <label class="form-check-label">Tidak</label>
                                                         </div>
                                                     </td>
@@ -8863,12 +8906,12 @@ th h6 {
                                                     <td>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="cacat_ganda" value="1">
+                                                                name="kesehatan_cacat_ganda" value="1">
                                                             <label class="form-check-label">Ya</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio"
-                                                                name="cacat_ganda" value="0">
+                                                                name="kesehatan_cacat_ganda" value="0">
                                                             <label class="form-check-label">Tidak</label>
                                                         </div>
                                                     </td>
@@ -8877,13 +8920,13 @@ th h6 {
                                                     <td>10. Dipasung</td>
                                                     <td>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="dipasung"
-                                                                value="1">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="kesehatan_dipasung" value="1">
                                                             <label class="form-check-label">Ya</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="dipasung"
-                                                                value="0">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="kesehatan_dipasung" value="0">
                                                             <label class="form-check-label">Tidak</label>
                                                         </div>
                                                     </td>
@@ -8915,44 +8958,61 @@ th h6 {
                                             </thead>
                                             <tbody>
                                                 <tr>
+
+                                                    <input type="hidden" name="pendidikan_individu"
+                                                        id="pendidikan_individu" value="">
+                                                    <input type="hidden" name="pendidikan_id" id="pendidikan_id"
+                                                        value="">
+
+
                                                     <td>1. Tidak sekolah</td>
-                                                    <td><input type="radio" name="pendidikan_tertinggi" value="1"></td>
+                                                    <td><input type="radio" name="pendidikan_pendidikan_tertinggi"
+                                                            value="1"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>2. SD dan sederajat</td>
-                                                    <td><input type="radio" name="pendidikan_tertinggi" value="2"></td>
+                                                    <td><input type="radio" name="pendidikan_pendidikan_tertinggi"
+                                                            value="2"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>3. SMP dan sederajat</td>
-                                                    <td><input type="radio" name="pendidikan_tertinggi" value="3"></td>
+                                                    <td><input type="radio" name="pendidikan_pendidikan_tertinggi"
+                                                            value="3"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>4. SMA dan sederajat</td>
-                                                    <td><input type="radio" name="pendidikan_tertinggi" value="4"></td>
+                                                    <td><input type="radio" name="pendidikan_pendidikan_tertinggi"
+                                                            value="4"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>5. Diploma 1-3</td>
-                                                    <td><input type="radio" name="pendidikan_tertinggi" value="5"></td>
+                                                    <td><input type="radio" name="pendidikan_pendidikan_tertinggi"
+                                                            value="5"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>6. S1 dan sederajat</td>
-                                                    <td><input type="radio" name="pendidikan_tertinggi" value="6"></td>
+                                                    <td><input type="radio" name="pendidikan_pendidikan_tertinggi"
+                                                            value="6"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>7. S2 dan sederajat</td>
-                                                    <td><input type="radio" name="pendidikan_tertinggi" value="7"></td>
+                                                    <td><input type="radio" name="pendidikan_pendidikan_tertinggi"
+                                                            value="7"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>8. S3 dan sederajat</td>
-                                                    <td><input type="radio" name="pendidikan_tertinggi" value="8"></td>
+                                                    <td><input type="radio" name="pendidikan_pendidikan_tertinggi"
+                                                            value="8"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>9. Pesantren, seminari, wihara dan sejenisnya</td>
-                                                    <td><input type="radio" name="pendidikan_tertinggi" value="9"></td>
+                                                    <td><input type="radio" name="pendidikan_pendidikan_tertinggi"
+                                                            value="9"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>10. Lainnya</td>
-                                                    <td><input type="radio" name="pendidikan_tertinggi" value="10"></td>
+                                                    <td><input type="radio" name="pendidikan_pendidikan_tertinggi"
+                                                            value="10"></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -8963,7 +9023,7 @@ th h6 {
                             <div class="row mb-3">
                                 <div class="card-style mb-30">
                                     <h6 class="mb-10">P502 - Bahasa digunakan di rumah dan permukiman</h6>
-                                    <input type="text" class="form-control" name="bahasa_rumah"
+                                    <input type="text" class="form-control" name="pendidikan_bahasa_rumah"
                                         placeholder="Tuliskan bahasa...">
                                 </div>
                             </div>
@@ -8972,7 +9032,7 @@ th h6 {
                                 <div class="card-style mb-30">
                                     <h6 class="mb-10">P503 - Bahasa digunakan di lembaga formal (sekolah, tempat kerja)
                                     </h6>
-                                    <input type="text" class="form-control" name="bahasa_formal"
+                                    <input type="text" class="form-control" name="pendidikan_bahasa_formal"
                                         placeholder="Tuliskan bahasa...">
                                 </div>
                             </div>
@@ -8980,7 +9040,7 @@ th h6 {
                             <div class="row mb-3">
                                 <div class="card-style mb-30">
                                     <h6 class="mb-10">P504 - Kerja bakti setahun terakhir</h6>
-                                    <input type="number" class="form-control" name="kerja_bakti"
+                                    <input type="number" class="form-control" name="pendidikan_kerja_bakti"
                                         placeholder="Jumlah kegiatan">
                                 </div>
                             </div>
@@ -8988,7 +9048,7 @@ th h6 {
                             <div class="row mb-3">
                                 <div class="card-style mb-30">
                                     <h6 class="mb-10">P505 - Siskamling setahun terakhir</h6>
-                                    <input type="number" class="form-control" name="siskamling"
+                                    <input type="number" class="form-control" name="pendidikan_siskamling"
                                         placeholder="Jumlah kegiatan">
                                 </div>
                             </div>
@@ -8996,7 +9056,7 @@ th h6 {
                             <div class="row mb-3">
                                 <div class="card-style mb-30">
                                     <h6 class="mb-10">P506 - Pesta rakyat/adat setahun terakhir</h6>
-                                    <input type="number" class="form-control" name="pesta_rakyat"
+                                    <input type="number" class="form-control" name="pendidikan_pesta_rakyat"
                                         placeholder="Jumlah kegiatan">
                                 </div>
                             </div>
@@ -9004,7 +9064,7 @@ th h6 {
                             <div class="row mb-3">
                                 <div class="card-style mb-30">
                                     <h6 class="mb-10">P507 - Menolong warga yang mengalami kematian keluarga</h6>
-                                    <input type="number" class="form-control" name="menolong_kematian"
+                                    <input type="number" class="form-control" name="pendidikan_menolong_kematian"
                                         placeholder="Jumlah kegiatan">
                                 </div>
                             </div>
@@ -9012,7 +9072,7 @@ th h6 {
                             <div class="row mb-3">
                                 <div class="card-style mb-30">
                                     <h6 class="mb-10">P508 - Menolong warga yang sedang sakit</h6>
-                                    <input type="number" class="form-control" name="menolong_sakit"
+                                    <input type="number" class="form-control" name="pendidikan_menolong_sakit"
                                         placeholder="Jumlah kegiatan">
                                 </div>
                             </div>
@@ -9020,7 +9080,7 @@ th h6 {
                             <div class="row mb-3">
                                 <div class="card-style mb-30">
                                     <h6 class="mb-10">P509 - Menolong warga yang kecelakaan</h6>
-                                    <input type="number" class="form-control" name="menolong_kecelakaan"
+                                    <input type="number" class="form-control" name="pendidikan_menolong_kecelakaan"
                                         placeholder="Jumlah kegiatan">
                                 </div>
                             </div>
@@ -9097,9 +9157,9 @@ function loadData(page = 1, search = '') {
                                                     <button class="text-warning btn-editKuesioner" data-id="${row.individu_id}">
                                                         <i class="lni lni-pencil-alt"></i>
                                                     </button>
-                                                    <button class="text-danger">
-                                                        <i class="lni lni-trash-can"></i>
-                                                    </button>
+                                                    <button class="text-danger btn-deleteIndividu" data-id="${row.individu_id}">
+        <i class="lni lni-trash-can"></i>
+    </button>
                                                 </div>
                             </td>
                         </tr>`;
@@ -9171,15 +9231,65 @@ $(document).on('click', '.btn-editKuesioner', function() {
             const pendidikan = res.pendidikan?. [0] || {}; // ambil record pertama
             const pekerjaan = res.pekerjaan?. [0] || {}; // ambil record pertama
             const sumberPenghasilanData = res.sumber_penghasilan;
+            const datapermukiman = res.datapermukiman?. [0] || [];
+            const datalokasi = res.datalokasi?. [0] || [];
+            const datakeluarga = res.datakeluarga?. [0] || [];
 
             // isi field biasa (individu) — bisa gunakan loop seperti sebelumnya
+            // $.each(individu, function(key, value) {
+            //     const $el = $("[name='" + key + "']");
+            //     if ($el.length) $el.val(value).trigger('change');
+            // });
+
+
+            $.each(datalokasi, function(key, value) {
+                if (key === "id") {
+                    $('#lokasi_id').val(value);
+                    return;
+                }
+                const $el = $("[name='lokasi_" + key + "']");
+                // if ($el.length) $el.val(value).trigger('change');
+                if ($el) $el.val(value);
+            });
+
+
+            $.each(datakeluarga, function(key, value) {
+                if (key === "id") {
+                    $('#keluarga_id').val(value);
+                    return;
+                }
+                const $el = $("[name='keluarga_" + key + "']");
+                // if ($el.length) $el.val(value).trigger('change');
+                if ($el) $el.val(value);
+            });
+
             $.each(individu, function(key, value) {
-                const $el = $("[name='" + key + "']");
+                if (key === "id") {
+                    $('#individu_id').val(value);
+                    return;
+                }
+                const $el = $("[name='individu_" + key + "']");
+                if ($el.length) {
+                    if ($el.is('select')) {
+                        $el.val(value).trigger('change');
+                    } else {
+                        $el.val(value);
+                    }
+                }
+            });
+
+
+            $.each(datapermukiman, function(key, value) {
+                if (key === "id") {
+                    $('#permukiman_id').val(value);
+                    return;
+                }
+                const $el = $("[name='permukiman_" + key + "']");
                 if ($el.length) $el.val(value).trigger('change');
             });
 
             // Tangani Select2 untuk enumerator_id
-            if (individu.enumerator_id) {
+            if (datakeluarga.enumerator_id) {
                 // Tambahkan opsi ke Select2
                 const option = new Option(individu.nama, individu.enumerator_id, true, true);
                 $('#enumeratorSelectEdit').append(option).trigger('change');
@@ -9187,157 +9297,258 @@ $(document).on('click', '.btn-editKuesioner', function() {
                 // Atau, gunakan pendekatan Select2 untuk menambahkan data
                 $('#enumeratorSelectEdit').select2('trigger', 'select', {
                     data: {
-                        id: individu.enumerator_id,
-                        text: individu.nama
+                        id: datakeluarga.enumerator_id,
+                        text: datakeluarga.enumerator_nama
                     }
                 });
             }
 
-            akses.forEach(function(item) {
-                const fasilitas = item.fasilitas; // contoh: "PAUD", "TK/RA", dll
 
-                // cari baris form yang punya hidden input dengan value fasilitas tsb
-                $('input[name^="akses_pendidikan"][name$="[fasilitas]"]').each(function(i,
+
+            akses.forEach(function(item) {
+                const fasilitas = item.fasilitas;
+
+                // cari baris form yang sesuai
+                $('input[name^="akses_pendidikan"][name$="[fasilitas]"]').each(function(_,
                     el) {
                     if ($(el).val() == fasilitas) {
-                        // set nilai pada baris i
-                        $(`input[name="akses_pendidikan[${i}][jarak_km]"]`).val(item
-                            .jarak_km);
-                        $(`input[name="akses_pendidikan[${i}][waktu_tempuh_jam]"]`)
+                        const match = $(el).attr("name").match(
+                            /akses_pendidikan\[(\d+)\]/);
+                        const idx = match ? match[1] : null;
+                        if (!idx) return;
+
+                        // isi field input yang ada
+                        $(`input[name="akses_pendidikan[${idx}][jarak_km]"]`).val(
+                            item.jarak_km);
+                        $(`input[name="akses_pendidikan[${idx}][waktu_tempuh_jam]"]`)
                             .val(item.waktu_tempuh_jam);
-                        $(`select[name="akses_pendidikan[${i}][kemudahan]"]`).val(
+                        $(`select[name="akses_pendidikan[${idx}][kemudahan]"]`).val(
                             item.kemudahan);
-                        // tambahkan hidden id record DB kalau perlu
-                        if (item.id) {
-                            if ($(`input[name="akses_pendidikan[${i}][id]"]`)
-                                .length) {
-                                $(`input[name="akses_pendidikan[${i}][id]"]`).val(
-                                    item.id);
-                            } else {
-                                $(el).after(
-                                    `<input type="hidden" name="akses_pendidikan[${i}][id]" value="${item.id}">`
-                                );
-                            }
+
+                        // hidden id
+                        let idInput = $(
+                            `input[name="akses_pendidikan[${idx}][id]"]`);
+                        if (idInput.length) {
+                            idInput.val(item.id);
+                        } else {
+                            $("#sdgsFormEdit").append(
+                                `<input type="hidden" name="akses_pendidikan[${idx}][id]" value="${item.id}">`
+                            );
+                        }
+
+                        // hidden permukiman_id
+                        let pkInput = $(
+                            `input[name="akses_pendidikan[${idx}][permukiman_id]"]`
+                        );
+                        if (pkInput.length) {
+                            pkInput.val(item.permukiman_id);
+                        } else {
+                            $("#sdgsFormEdit").append(
+                                `<input type="hidden" name="akses_pendidikan[${idx}][permukiman_id]" value="${item.permukiman_id}">`
+                            );
                         }
                     }
                 });
             });
+
+
 
             aksesFaskes.forEach(function(item) {
-                const fasilitas = item.fasilitas; // contoh: "Rumah sakit"
-                $('input[name^="akses_kesehatan"][name$="[fasilitas]"]').each(function(i,
+                const fasilitas = item.fasilitas;
+
+                // cari baris form yang sesuai
+                $('input[name^="akses_kesehatan"][name$="[fasilitas]"]').each(function(_,
                     el) {
                     if ($(el).val() == fasilitas) {
-                        // set nilai pada baris i
-                        $(`input[name="akses_kesehatan[${i}][jarak_km]"]`).val(item
-                            .jarak_km);
-                        $(`input[name="akses_kesehatan[${i}][waktu_tempuh_jam]"]`)
+                        const match = $(el).attr("name").match(
+                            /akses_kesehatan\[(\d+)\]/);
+                        const idx = match ? match[1] : null;
+                        if (!idx) return;
+
+                        // isi field input yang ada
+                        $(`input[name="akses_kesehatan[${idx}][jarak_km]"]`).val(
+                            item.jarak_km);
+                        $(`input[name="akses_kesehatan[${idx}][waktu_tempuh_jam]"]`)
                             .val(item.waktu_tempuh_jam);
-                        $(`select[name="akses_kesehatan[${i}][kemudahan]"]`).val(
+                        $(`select[name="akses_kesehatan[${idx}][kemudahan]"]`).val(
                             item.kemudahan);
 
-                        // tambahkan hidden id record DB kalau perlu
-                        if (item.id) {
-                            if ($(`input[name="akses_kesehatan[${i}][id]"]`)
-                                .length) {
-                                $(`input[name="akses_kesehatan[${i}][id]"]`).val(
-                                    item.id);
-                            } else {
-                                $(el).after(
-                                    `<input type="hidden" name="akses_kesehatan[${i}][id]" value="${item.id}">`
-                                );
-                            }
+                        // hidden id
+                        let idInput = $(
+                            `input[name="akses_kesehatan[${idx}][id]"]`);
+                        if (idInput.length) {
+                            idInput.val(item.id);
+                        } else {
+                            $("#sdgsFormEdit").append(
+                                `<input type="hidden" name="akses_kesehatan[${idx}][id]" value="${item.id}">`
+                            );
+                        }
+
+                        // hidden permukiman_id
+                        let pkInput = $(
+                            `input[name="akses_kesehatan[${idx}][permukiman_id]"]`
+                        );
+                        if (pkInput.length) {
+                            pkInput.val(item.permukiman_id);
+                        } else {
+                            $("#sdgsFormEdit").append(
+                                `<input type="hidden" name="akses_kesehatan[${idx}][permukiman_id]" value="${item.permukiman_id}">`
+                            );
                         }
                     }
                 });
             });
+
+
 
             aksesNakes.forEach(function(item) {
-                const fasilitas = item.tenaga_kesehatan; // contoh: "Rumah sakit"
-                $('input[name^="tenaga_kesehatan"][name$="[fasilitas]"]').each(function(i,
+                const fasilitas = item.tenaga_kesehatan;
+
+                // cari baris form yang sesuai
+                $('input[name^="tenaga_kesehatan"][name$="[fasilitas]"]').each(function(_,
                     el) {
                     if ($(el).val() == fasilitas) {
-                        // set nilai pada baris i
-                        $(`input[name="tenaga_kesehatan[${i}][jarak]"]`).val(item
-                            .jarak_km);
-                        $(`input[name="tenaga_kesehatan[${i}][waktu]"]`)
+                        const match = $(el).attr("name").match(
+                            /tenaga_kesehatan\[(\d+)\]/);
+                        const idx = match ? match[1] : null;
+                        if (!idx) return;
+
+                        // isi field input yang ada
+                        $(`input[name="tenaga_kesehatan[${idx}][jarak_km]"]`).val(
+                            item.jarak_km);
+                        $(`input[name="tenaga_kesehatan[${idx}][waktu_tempuh_jam]"]`)
                             .val(item.waktu_tempuh_jam);
-                        $(`select[name="tenaga_kesehatan[${i}][kemudahan]"]`).val(
+                        $(`select[name="tenaga_kesehatan[${idx}][kemudahan]"]`).val(
                             item.kemudahan);
 
-                        // tambahkan hidden id record DB kalau perlu
-                        if (item.id) {
-                            if ($(`input[name="tenaga_kesehatan[${i}][id]"]`)
-                                .length) {
-                                $(`input[name="tenaga_kesehatan[${i}][id]"]`).val(
-                                    item.id);
-                            } else {
-                                $(el).after(
-                                    `<input type="hidden" name="tenaga_kesehatan[${i}][id]" value="${item.id}">`
-                                );
-                            }
+                        // hidden id
+                        let idInput = $(
+                            `input[name="tenaga_kesehatan[${idx}][id]"]`);
+                        if (idInput.length) {
+                            idInput.val(item.id);
+                        } else {
+                            $("#sdgsFormEdit").append(
+                                `<input type="hidden" name="tenaga_kesehatan[${idx}][id]" value="${item.id}">`
+                            );
+                        }
+
+                        // hidden permukiman_id
+                        let pkInput = $(
+                            `input[name="tenaga_kesehatan[${idx}][permukiman_id]"]`
+                        );
+                        if (pkInput.length) {
+                            pkInput.val(item.permukiman_id);
+                        } else {
+                            $("#sdgsFormEdit").append(
+                                `<input type="hidden" name="tenaga_kesehatan[${idx}][permukiman_id]" value="${item.permukiman_id}">`
+                            );
                         }
                     }
                 });
             });
+
+
 
             aksesTransport.forEach(function(item) {
                 const tujuan = item.tujuan; // contoh: "Lokasi pekerjaan utama"
 
-                // cari hidden input tujuan
-                $('input[name^="transportasi"][name$="[tujuan]"]').each(function(i, el) {
+                // cari baris yang cocok
+                $('input[name^="transportasi"][name$="[tujuan]"]').each(function(_, el) {
                     if ($(el).val() == tujuan) {
-                        // set nilai sesuai index baris
-                        $(`select[name="transportasi[${i}][jenis]"]`).val(item
-                            .jenis_transportasi);
-                        $(`select[name="transportasi[${i}][umum]"]`).val(item
-                            .transportasi_umum);
-                        $(`input[name="transportasi[${i}][waktu]"]`).val(item
-                            .waktu_tempuh_jam);
-                        $(`input[name="transportasi[${i}][biaya]"]`).val(item
-                            .biaya_perjalanan);
-                        $(`select[name="transportasi[${i}][kemudahan]"]`).val(item
+                        const match = $(el).attr("name").match(
+                            /transportasi\[(\d+)\]/);
+                        const idx = match ? match[1] : null;
+                        if (!idx) return;
+
+                        // === isi field yang ada ===
+                        $(`select[name="transportasi[${idx}][jenis_transportasi]"]`)
+                            .val(item
+                                .jenis_transportasi);
+                        $(`select[name="transportasi[${idx}][transportasi_umum]"]`)
+                            .val(item
+                                .transportasi_umum);
+                        $(`input[name="transportasi[${idx}][waktu_tempuh_jam]"]`)
+                            .val(item
+                                .waktu_tempuh_jam);
+                        $(`input[name="transportasi[${idx}][biaya_perjalanan]"]`)
+                            .val(item
+                                .biaya_perjalanan);
+                        $(`select[name="transportasi[${idx}][kemudahan]"]`).val(item
                             .kemudahan);
 
-                        // tambahkan hidden id record DB kalau perlu
-                        if (item.id) {
-                            if ($(`input[name="transportasi[${i}][id]"]`).length) {
-                                $(`input[name="transportasi[${i}][id]"]`).val(item
-                                    .id);
-                            } else {
-                                $(el).after(
-                                    `<input type="hidden" name="transportasi[${i}][id]" value="${item.id}">`
-                                );
-                            }
+                        // === hidden id record DB ===
+                        let idInput = $(`input[name="transportasi[${idx}][id]"]`);
+                        if (idInput.length) {
+                            idInput.val(item.id);
+                        } else {
+                            $("#sdgsFormEdit").append(
+                                `<input type="hidden" name="transportasi[${idx}][id]" value="${item.id}">`
+                            );
+                        }
+
+                        // === hidden permukiman_id ===
+                        let pkInput = $(
+                            `input[name="transportasi[${idx}][permukiman_id]"]`);
+                        if (pkInput.length) {
+                            pkInput.val(item.permukiman_id);
+                        } else {
+                            $("#sdgsFormEdit").append(
+                                `<input type="hidden" name="transportasi[${idx}][permukiman_id]" value="${item.permukiman_id}">`
+                            );
                         }
                     }
                 });
             });
 
 
+
             $.each(pemerintah, function(key, value) {
                 // skip field yang bukan bagian dari form
-                if (["id", "permukiman_id", "created_at", "updated_at"].includes(key))
+                if (["created_at", "updated_at"].includes(key))
                     return;
 
-                // cari input radio sesuai name & value, lalu set checked
-                const $input = $(`input[name="${key}"][value="${value}"]`);
+                if (key === "permukiman_id") {
+                    $('#program_pemerintah_permukiman_id').val(value);
+                    return;
+                }
+
+                if (key === "id") {
+                    $('#program_pemerintah_id').val(value);
+                    return;
+                }
+
+                // Ubah name menjadi program_pemerintah[nama_field]
+                const $input = $(
+                    `input[name="program_pemerintah[${key}]"][value="${value}"]`);
                 if ($input.length) {
                     $input.prop("checked", true);
+                } else {
+                    console.warn(
+                        `Input not found: program_pemerintah[${key}] with value ${value}`
+                    );
                 }
             });
 
             $.each(kesehatan, function(key, value) {
                 // skip field yang bukan bagian dari form
-                if (["id", "individu_id", "created_at", "updated_at"].includes(key))
+                if (["created_at", "updated_at"].includes(key))
                     return;
-
+                if (key === "individu_id") {
+                    $('#kesehatan_individu').val(value);
+                    return;
+                }
+                if (key === "id") {
+                    $('#kesehatan_id').val(value);
+                    return;
+                }
+                // cacat_kusta
+                // kesehatan_cacat_kusta
                 // cari input radio sesuai name & value, lalu set checked
-                const $input = $(`input[name="${key}"][value="${value}"]`);
+                const $input = $(`input[name="kesehatan_${key}"][value="${value}"]`);
                 if ($input.length) {
                     $input.prop("checked", true);
                 } else {
-                    const $el = $(`input[name="${key}"]`);
+                    const $el = $(`input[name="kesehatan_${key}"]`);
                     if ($el.length) {
                         $el.val(value);
                     }
@@ -9345,19 +9556,31 @@ $(document).on('click', '.btn-editKuesioner', function() {
             });
 
             $.each(pendidikan, function(key, value) {
+
                 // skip field yang bukan bagian dari form
-                if (["id", "individu_id", "created_at", "updated_at"].includes(key))
+                if (["created_at", "updated_at"].includes(key))
                     return;
-                const $input = $(`input[name="${key}"][value="${value}"]`);
+                if (key === "individu_id") {
+                    $('#pendidikan_individu').val(value);
+                    return;
+                }
+                if (key === "id") {
+                    $('#pendidikan_id').val(value);
+                    return;
+                }
+                // cacat_kusta
+                // kesehatan_cacat_kusta
+                // cari input radio sesuai name & value, lalu set checked
+                const $input = $(`input[name="pendidikan_${key}"][value="${value}"]`);
                 if ($input.length) {
                     $input.prop("checked", true);
                 } else {
-                    // kalau bukan radio, mungkin input biasa (text/number)
-                    const $el = $(`[name="${key}"]`);
+                    const $el = $(`input[name="pendidikan_${key}"]`);
                     if ($el.length) {
                         $el.val(value);
                     }
                 }
+
             });
 
             $.each(pekerjaan, function(key, value) {
@@ -9377,14 +9600,12 @@ $(document).on('click', '.btn-editKuesioner', function() {
             });
 
 
-
-
             sumberPenghasilanData.forEach(function(item) {
                 const jenis_penghasilan_id = item.jenis_penghasilan_id;
 
                 // cari input hidden jenis_penghasilan yang cocok
-                $('input[name^="sumber_penghasilan"][name$="[jenis_penghasilan]"]').each(
-                    function(_, el) {
+                $('#kuesionerEditModal input[name^="sumber_penghasilan"][name$="[jenis_penghasilan]"]')
+                    .each(function(_, el) {
                         if ($(el).val() == jenis_penghasilan_id) {
                             const match = $(el).attr("name").match(
                                 /sumber_penghasilan\[(\d+)\]/);
@@ -9400,40 +9621,37 @@ $(document).on('click', '.btn-editKuesioner', function() {
                                 item.ekspor);
 
                             // === pastikan hidden id terset ===
-                            if (item.id) {
-                                let idInput = $(
-                                    `input[name="sumber_penghasilan[${idx}][id]"]`);
-                                if (idInput.length) {
-                                    idInput.val(item.id);
-                                } else {
-                                    $(el).after(
-                                        `<input type="hidden" name="sumber_penghasilan[${idx}][id]" value="${item.id}">`
-                                    );
-                                }
+                            let idInput = $(
+                                `input[name="sumber_penghasilan[${idx}][id]"]`);
+                            if (idInput.length) {
+                                idInput.val(item.id);
+                            } else {
+                                // append langsung ke <form> agar pasti masuk serialize()
+                                $("#sdgsFormEdit").append(
+                                    `<input type="hidden" name="sumber_penghasilan[${idx}][id]" value="${item.id}">`
+                                );
                             }
 
                             // === pastikan hidden pekerjaan_id terset ===
-                            if (item.pekerjaan_id) {
-                                let pkInput = $(
-                                    `input[name="sumber_penghasilan[${idx}][pekerjaan_id]"]`
-                                    );
-                                if (pkInput.length) {
-                                    pkInput.val(item.pekerjaan_id);
-                                } else {
-                                    $(el).after(
-                                        `<input type="hidden" name="sumber_penghasilan[${idx}][pekerjaan_id]" value="${item.pekerjaan_id}">`
-                                    );
-                                }
+                            let pkInput = $(
+                                `input[name="sumber_penghasilan[${idx}][pekerjaan_id]"]`
+                            );
+                            if (pkInput.length) {
+                                pkInput.val(item.pekerjaan_id);
+                            } else {
+                                $("#sdgsFormEdit").append(
+                                    `<input type="hidden" name="sumber_penghasilan[${idx}][pekerjaan_id]" value="${item.pekerjaan_id}">`
+                                );
                             }
 
                             // === konsistensi field: tambahkan jenis_penghasilan_id ===
                             let jpidInput = $(
                                 `input[name="sumber_penghasilan[${idx}][jenis_penghasilan_id]"]`
-                                );
+                            );
                             if (jpidInput.length) {
                                 jpidInput.val(item.jenis_penghasilan_id);
                             } else {
-                                $(el).after(
+                                $("#sdgsFormEdit").append(
                                     `<input type="hidden" name="sumber_penghasilan[${idx}][jenis_penghasilan_id]" value="${item.jenis_penghasilan_id}">`
                                 );
                             }
@@ -9441,78 +9659,6 @@ $(document).on('click', '.btn-editKuesioner', function() {
                     });
             });
 
-
-
-            // sumberPenghasilanData.forEach(function(item) {
-
-            //     const jenis_penghasilan_id = item.jenis_penghasilan_id;
-
-            //     $('input[name^="sumber_penghasilan"][name$="[jenis_penghasilan]"]').each(
-            //         function(_, el) {
-            //             if ($(el).val() == jenis_penghasilan_id) {
-            //                 const match = $(el).attr("name").match(
-            //                     /sumber_penghasilan\[(\d+)\]/);
-            //                 const idx = match ? match[1] : null;
-
-            //                 if (item.id) {
-            //                     $(el).after(
-            //                         `<input type="hidden" name="sumber_penghasilan[${idx}][id]" value="${item.id}">`
-            //                     );
-            //                 }
-            //                 if (item.pekerjaan_id) {
-            //                     $(el).after(
-            //                         `<input type="hidden" name="sumber_penghasilan[${idx}][pekerjaan_id]" value="${item.pekerjaan_id}">`
-            //                     );
-            //                 }
-
-            //             }
-            //         });
-
-
-
-
-            // const jenis_penghasilan_id = item.jenis_penghasilan_id;
-
-            // cari baris form yang punya hidden input dengan value id tsb
-            // $('input[name^="sumber_penghasilan"][name$="[jenis_penghasilan]"]').each(
-            //     function(i, el) {
-            //         if ($(el).val() == jenis_penghasilan_id) {
-            //             // set nilai pada baris i
-            //             $(`input[name="sumber_penghasilan[${i+1}][volume]"]`).val(
-            //                 item.volume);
-            //             $(`input[name="sumber_penghasilan[${i+1}][penghasilan_setahun]"]`)
-            //                 .val(item.penghasilan_setahun);
-            //             $(`select[name="sumber_penghasilan[${i+1}][ekspor]"]`).val(
-            //                 item.ekspor);
-
-            //             // tambahkan hidden id record DB kalau perlu
-            //             if (item.id) {
-            //                 if ($(`input[name="sumber_penghasilan[${i+1}][id]"]`)
-            //                     .length) {
-            //                     $(`input[name="sumber_penghasilan[${i+1}][id]"]`)
-            //                         .val(item.id);
-            //                 } else {
-            //                     $(el).after(
-            //                         `<input type="hidden" name="sumber_penghasilan[${i+1}][id]" value="${item.id}">`
-            //                     );
-            //                 }
-            //             }
-
-            //             if (item.pekerjaan_id) {
-            //                 if ($(
-            //                         `input[name="sumber_penghasilan[${i+1}][pekerjaan_id]"]`)
-            //                     .length) {
-            //                     $(`input[name="sumber_penghasilan[${i+1}][pekerjaan_id]"]`)
-            //                         .val(item.pekerjaan_id);
-            //                 } else {
-            //                     $(el).after(
-            //                         `<input type="hidden" name="sumber_penghasilan[${i+1}][pekerjaan_id]" value="${item.pekerjaan_id}">`
-            //                     );
-            //                 }
-            //             }
-            //         }
-            //     });
-            // });
         }
     });
 
@@ -9599,7 +9745,7 @@ $(document).ready(function() {
         e.preventDefault(); // Pastikan untuk mencegah reload halaman
         let id = $(this).data('id');
         let formData = $("#sdgsFormEdit").serialize();
-        console.log("Data yang dikirim:", formData);
+        // console.log("Data yang dikirim:", formData);
 
         $.ajax({
             url: '<?= base_url("data/update") ?>/' + id,
@@ -9623,7 +9769,8 @@ $(document).ready(function() {
                             errorMessage += "\n- " + response.errors[key];
                         }
                     }
-
+                    $("#kuesionerEditModal").modal("hide");
+                    loadData();
                     alert(errorMessage);
                 }
             },
@@ -9672,7 +9819,9 @@ $(document).ready(function() {
                     alert(response.message);
                 } else {
                     // Menampilkan error validasi atau server
-                    let errorMessage = "Gagal: " + response.message;
+                    let errorMessage = "" + response.message;
+
+
 
                     // Jika ada error detail
                     if (response.errors) {
@@ -9682,7 +9831,11 @@ $(document).ready(function() {
                         }
                     }
 
+                    $("#kuesionerModal").modal("hide");
+
                     alert(errorMessage);
+
+                    loadData();
                 }
             },
             error: function(xhr, status, error) {
@@ -9819,6 +9972,75 @@ $(document).ready(function() {
         });
     });
 });
+
+
+// delete
+
+// Event listener untuk button delete
+$(document).on('click', '.btn-deleteIndividu', function() {
+    const individuId = $(this).data('id');
+
+    if (confirm('Apakah Anda yakin ingin menghapus data ini? Data yang terhubung juga akan dihapus.')) {
+        deleteIndividuData(individuId);
+    }
+});
+
+// Fungsi AJAX untuk delete
+function deleteIndividuData(individuId) {
+    $.ajax({
+        url: '<?= site_url('delete/individu') ?>/' + individuId,
+        type: 'POST',
+        dataType: 'json',
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRF-TOKEN': '<?= csrf_token() ?>'
+        },
+        beforeSend: function() {
+            // Tampilkan loading indicator
+            $('#loading').show();
+        },
+        success: function(response) {
+            if (response.success) {
+                alert(response.message);
+
+                // Tampilkan pesan sukses
+                // Swal.fire({
+                //     icon: 'success',
+                //     title: 'Berhasil',
+                //     text: response.message,
+                //     timer: 2000,
+                //     showConfirmButton: false
+                // });
+
+                // Reload datatable atau hapus row
+                // setTimeout(() => {
+                //     $('#tableIndividu').DataTable().ajax.reload();
+                // }, 1500);
+            } else {
+                alert(response.message);
+                // Swal.fire({
+                //     icon: 'error',
+                //     title: 'Gagal',
+                //     text: response.message
+                // });
+            }
+        },
+        error: function(xhr, status, error) {
+            // Swal.fire({
+            //     icon: 'error',
+            //     title: 'Error',
+            //     text: 'Terjadi kesalahan: ' + error
+            // });
+        },
+        complete: function() {
+            // Sembunyikan loading indicator
+            $('#loading').hide();
+        }
+    });
+}
 </script>
+
+
+
 
 <?= $this->endSection() ?>

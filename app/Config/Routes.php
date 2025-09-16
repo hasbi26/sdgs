@@ -28,3 +28,7 @@ $routes->post('survey/simpan', 'SurveyController::simpanDataSurvey');
 $routes->post('data/update/(:num)', 'SurveyController::update/$1');
 $routes->get('data/fetchData', 'SurveyController::fetchData');
 $routes->get('data/getDetail/(:num)', 'SurveyController::fetchDataDetail/$1');
+
+// Routes untuk delete
+$routes->post('delete/individu/(:num)', 'SurveyController::deleteByIndividuId/$1');
+$routes->post('delete/individu-only/(:num)', 'SurveyController::deleteIndividuOnly/$1');

@@ -15,6 +15,6 @@ class KeluargaModel extends Model
         'nomor_kk' => 'required|max_length[20]',
         'nik_kepala_keluarga' => 'required|max_length[16]',
         'lokasi_id' => 'required|numeric',
-        'enumerator_id' => 'required|numeric'
+        'enumerator_id' => 'numeric'
     ];
 }
