@@ -721,7 +721,9 @@ class SurveyController extends BaseController
         $db->transStart();
 
         $post = $this->request->getPost();
-        log_message('debug', 'POST payload: ' . print_r($post, true));
+
+        $id_permukiman = $post['permukiman_id'];
+        // log_message('debug', 'POST payload: ' . print_r($id_permukiman, true));
 
         try {
             $request = $this->request->getPost();
@@ -869,7 +871,9 @@ class SurveyController extends BaseController
                     if (!empty($row['id'])) {
                         $aksesPendidikanModel->update($row['id'], $row);
                     } else {
-                        $row['permukiman_id'] = $request['individu']['permukiman_id'] ?? null;
+                        $row['permukiman_id'] = $id_permukiman;
+                        log_message('debug', 'row permukiman?: ' . print_r($row, true));
+
                         $aksesPendidikanModel->insert($row);
                     }
                 }
@@ -882,7 +886,7 @@ class SurveyController extends BaseController
                     if (!empty($row['id'])) {
                         $aksesKesehatanModel->update($row['id'], $row);
                     } else {
-                        $row['permukiman_id'] = $request['individu']['permukiman_id'] ?? null;
+                        $row['permukiman_id'] = $id_permukiman;
                         $aksesKesehatanModel->insert($row);
                     }
                 }
@@ -895,7 +899,7 @@ class SurveyController extends BaseController
                     if (!empty($row['id'])) {
                         $aksesTenagaKesehatanModel->update($row['id'], $row);
                     } else {
-                        $row['permukiman_id'] = $request['individu']['permukiman_id'] ?? null;
+                        $row['permukiman_id'] = $id_permukiman;
                         $aksesTenagaKesehatanModel->insert($row);
                     }
                 }
@@ -908,7 +912,7 @@ class SurveyController extends BaseController
                     if (!empty($row['id'])) {
                         $aksesTransportasiModel->update($row['id'], $row);
                     } else {
-                        $row['permukiman_id'] = $request['individu']['permukiman_id'] ?? null;
+                        $row['permukiman_id'] =$id_permukiman;
                         $aksesTransportasiModel->insert($row);
                     }
                 }
@@ -1073,7 +1077,7 @@ class SurveyController extends BaseController
             
                 return $this->response->setJSON([
                     'status' => false,
-                    'message' => 'Gagal update data.',
+                    'message' => 'update data.',
                     'db_error' => $error,
                     'last_query' => (string) $lastQuery
                 ]);
@@ -1112,14 +1116,29 @@ class SurveyController extends BaseController
                 
                 // 4. Cek apakah masih ada individu lain dalam keluarga yang sama
                 $remainingIndividu = $individuModel->where('keluarga_id', $keluargaId)->countAllResults();
-                
+
+
                 if ($remainingIndividu == 0) {
-                    // Jika tidak ada individu lain, hapus semua data keluarga
-                    $this->deleteRelatedToKeluarga($keluargaId);
-                    
+                    // ambil data keluarga dulu sebelum dihapus
                     $keluargaModel = new KeluargaModel();
-                    $keluargaModel->delete($keluargaId);
+                    $keluarga = $keluargaModel->find($keluargaId);
+            
+                    if ($keluarga) {
+                        $lokasiId = $keluarga['lokasi_id'];
+            
+                        // hapus semua data terkait keluarga
+                        $this->deleteRelatedToKeluarga($keluargaId);
+            
+                        // hapus keluarga
+                        $keluargaModel->delete($keluargaId);
+            
+                        // hapus lokasi
+                        $lokasiModel = new LokasiModel();
+                        $lokasiModel->delete($lokasiId);
+                    }
                 }
+                
+
             }
             
             $db->transComplete(); // Commit transaction
@@ -1200,12 +1219,7 @@ class SurveyController extends BaseController
             $permukimanModel->where('keluarga_id', $keluargaId)->delete();
         }
 
-        $lokasi = $keluargaModel->where('keluarga_id', $keluargaId)->first();
 
-        if ($lokasi){
-            $lokasiId = $lokasi['lokasi_id'];
-            $lokasiModel->where('id', $lokasiId)->delete();   
-        }
     }
     
     // Alternative: Hapus hanya individu dan relasinya (tanpa menghapus keluarga)
