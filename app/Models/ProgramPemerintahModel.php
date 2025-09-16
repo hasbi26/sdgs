@@ -9,7 +9,7 @@ class ProgramPemerintahModel extends Model
     protected $primaryKey = 'id';
     protected $allowedFields = [
         'permukiman_id', 'blt_dana_desa', 'pkh', 'bst', 'banpres',
-        'bantuan_umkm', 'bantuan_pekerja', 'bantuan_pendidikan', 'lainnya', 'keterangan_lainnya'
+        'bantuan_umkm', 'bantuan_pekerja', 'bantuan_pendidikan', 'lainnya'
     ];
     protected $useTimestamps = true;
     protected $createdField = 'created_at';
