@@ -1,0 +1,13 @@
+# Abaikan environment
+.env
+
+# Abaikan folder writable (log, cache, session, dll)
+writable/*
+!writable/.htaccess   # kecuali kalau ada htaccess yang penting
+
+# Abaikan file OS/editor
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
