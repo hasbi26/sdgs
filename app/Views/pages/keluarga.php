@@ -573,6 +573,7 @@ th h6 {
                                                                     name="akses_pendidikan[0][fasilitas]" value="PAUD">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[0][id_fasilitas]" value="1">
+
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -631,6 +632,7 @@ th h6 {
                                                                     name="akses_pendidikan[2][fasilitas]" value="SD/MI">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[2][id_fasilitas]" value="3">
+
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -661,6 +663,7 @@ th h6 {
                                                                     value="SMP/MTs">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[3][id_fasilitas]" value="4">
+
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -691,6 +694,7 @@ th h6 {
                                                                     value="SMA/MA">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[4][id_fasilitas]" value="5">
+
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -721,6 +725,7 @@ th h6 {
                                                                     value="Perguruan tinggi">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[5][id_fasilitas]" value="6">
+
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -751,6 +756,7 @@ th h6 {
                                                                     value="Pesantren">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[6][id_fasilitas]" value="7">
+
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -781,6 +787,7 @@ th h6 {
                                                                     value="Seminari">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[7][id_fasilitas]" value="8">
+
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -811,6 +818,7 @@ th h6 {
                                                                     value="Pendidikan keagamaan lain">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[8][id_fasilitas]" value="9">
+
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -5080,6 +5088,8 @@ th h6 {
                                                                     name="akses_pendidikan[0][fasilitas]" value="PAUD">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[0][id_fasilitas]" value="1">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[0][permukiman_id]" value="">
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -5109,6 +5119,9 @@ th h6 {
                                                                     name="akses_pendidikan[1][fasilitas]" value="TK/RA">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[1][id_fasilitas]" value="2">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[1][permukiman_id]" value="">
+
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -5138,6 +5151,8 @@ th h6 {
                                                                     name="akses_pendidikan[2][fasilitas]" value="SD/MI">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[2][id_fasilitas]" value="3">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[2][permukiman_id]" value="">
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -5168,6 +5183,8 @@ th h6 {
                                                                     value="SMP/MTs">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[3][id_fasilitas]" value="4">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[3][permukiman_id]" value="">
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -5198,6 +5215,8 @@ th h6 {
                                                                     value="SMA/MA">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[4][id_fasilitas]" value="5">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[4][permukiman_id]" value="">
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -5228,6 +5247,8 @@ th h6 {
                                                                     value="Perguruan tinggi">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[5][id_fasilitas]" value="6">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[5][permukiman_id]" value="">
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -5258,6 +5279,8 @@ th h6 {
                                                                     value="Pesantren">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[6][id_fasilitas]" value="7">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[6][permukiman_id]" value="">
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -5288,6 +5311,8 @@ th h6 {
                                                                     value="Seminari">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[7][id_fasilitas]" value="8">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[7][permukiman_id]" value="">
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -5318,6 +5343,8 @@ th h6 {
                                                                     value="Pendidikan keagamaan lain">
                                                                 <input type="hidden"
                                                                     name="akses_pendidikan[8][id_fasilitas]" value="9">
+                                                                <input type="hidden"
+                                                                    name="akses_pendidikan[8][permukiman_id]" value="">
                                                             </td>
                                                             <td>
                                                                 <input type="number" class="form-control"
@@ -9308,6 +9335,8 @@ $(document).on('click', '.btn-editKuesioner', function() {
             akses.forEach(function(item) {
                 const fasilitas = item.fasilitas;
 
+                console.log("fasility", fasilitas);
+
                 // cari baris form yang sesuai
                 $('input[name^="akses_pendidikan"][name$="[fasilitas]"]').each(function(_,
                     el) {
@@ -9315,6 +9344,7 @@ $(document).on('click', '.btn-editKuesioner', function() {
                         const match = $(el).attr("name").match(
                             /akses_pendidikan\[(\d+)\]/);
                         const idx = match ? match[1] : null;
+
                         if (!idx) return;
 
                         // isi field input yang ada
@@ -9328,6 +9358,10 @@ $(document).on('click', '.btn-editKuesioner', function() {
                         // hidden id
                         let idInput = $(
                             `input[name="akses_pendidikan[${idx}][id]"]`);
+
+
+
+
                         if (idInput.length) {
                             idInput.val(item.id);
                         } else {
@@ -9340,8 +9374,13 @@ $(document).on('click', '.btn-editKuesioner', function() {
                         let pkInput = $(
                             `input[name="akses_pendidikan[${idx}][permukiman_id]"]`
                         );
+
+                        console.log("item", item)
+                        // console.log("idInput", idInput[0])
+
                         if (pkInput.length) {
                             pkInput.val(item.permukiman_id);
+
                         } else {
                             $("#sdgsFormEdit").append(
                                 `<input type="hidden" name="akses_pendidikan[${idx}][permukiman_id]" value="${item.permukiman_id}">`
@@ -9754,13 +9793,15 @@ $(document).ready(function() {
             dataType: "json",
             success: function(response) {
                 if (response.status === "success") {
-                    // $("#kuesionerModal").modal("hide");
-                    // $("#sdgsForm")[0].reset(); // Pastikan ini adalah id form yang benar
+                    $("#kuesionerModal").modal("hide");
+                    $("#sdgsForm")[0].reset(); // Pastikan ini adalah id form yang benar
+                    loadData();
+
                     // loadEnumerators(1, ""); // reload data
                     alert(response.message);
                 } else {
                     // Menampilkan error validasi atau server
-                    let errorMessage = "Gagal: " + response.message;
+                    let errorMessage = " " + response.message;
 
                     // Jika ada error detail
                     if (response.errors) {
@@ -9804,7 +9845,7 @@ $(document).ready(function() {
         e.preventDefault(); // Pastikan untuk mencegah reload halaman
 
         let formData = $("#sdgsForm").serialize();
-        console.log("Data yang dikirim:", formData);
+        // console.log("Data yang dikirim:", formData);
 
         $.ajax({
             url: "/survey/simpan", // route CI4
@@ -9813,9 +9854,10 @@ $(document).ready(function() {
             dataType: "json",
             success: function(response) {
                 if (response.status === "success") {
-                    // $("#kuesionerModal").modal("hide");
-                    // $("#sdgsForm")[0].reset(); // Pastikan ini adalah id form yang benar
+                    $("#kuesionerModal").modal("hide");
+                    $("#sdgsForm")[0].reset(); // Pastikan ini adalah id form yang benar
                     // loadEnumerators(1, ""); // reload data
+                    loadData();
                     alert(response.message);
                 } else {
                     // Menampilkan error validasi atau server
@@ -9849,7 +9891,7 @@ $(document).ready(function() {
                     // Coba parsing response JSON jika ada
                     const response = JSON.parse(xhr.responseText);
                     if (response.message) {
-                        errorMessage += "Pesan: " + response.message;
+                        errorMessage += "Pesan: " + JSON.parse(response.errors);
                     }
                 } catch (e) {
                     // Jika bukan JSON, tampilkan response text biasa
@@ -10003,6 +10045,9 @@ function deleteIndividuData(individuId) {
             if (response.success) {
                 alert(response.message);
 
+
+                loadData();
+
                 // Tampilkan pesan sukses
                 // Swal.fire({
                 //     icon: 'success',
@@ -10023,6 +10068,7 @@ function deleteIndividuData(individuId) {
                 //     title: 'Gagal',
                 //     text: response.message
                 // });
+                loadData();
             }
         },
         error: function(xhr, status, error) {
@@ -10031,9 +10077,11 @@ function deleteIndividuData(individuId) {
             //     title: 'Error',
             //     text: 'Terjadi kesalahan: ' + error
             // });
+            loadData();
         },
         complete: function() {
             // Sembunyikan loading indicator
+            loadData();
             $('#loading').hide();
         }
     });
