@@ -53,3 +53,7 @@ coverage/
 *.tmp
 *.swp
 *.swo
+
+.htaccess
+/cgi-bin/
+/index.html
